@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagezy — Privacy Policy</title>
+  <meta name="description" content="Pagezy collects nothing. No telemetry, no account, no cloud. The only connections it can make are a daily update check you can switch off and downloads you start.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f2efe7; --paper-2:#e9e5da; --ink:#16181c; --ink-2:#4a4d55; --line:#d9d4c7;
+      --signal:#2553f5; --rose:#d6336c; --card:#faf8f3; --good:#1f8a4c;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        --paper:#16181c; --paper-2:#1f2227; --ink:#f2efe7; --ink-2:#b3b0a8; --line:#2e3239;
+        --signal:#5b7cff; --rose:#e2507f; --card:#1c1f24; --good:#3fbf74;
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--paper); color:var(--ink);
+      font:17px/1.65 "Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--signal)}
+    .wrap{max-width:780px; margin:0 auto; padding:0 16px 72px}
+    nav{padding:20px 0}
+    nav a{display:inline-flex; align-items:center; gap:10px; font-weight:800; color:var(--ink); text-decoration:none}
+    nav svg{width:30px; height:30px}
+
+    header{padding:40px 0 12px}
+    .eyebrow{font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--rose)}
+    h1{font-size:clamp(2.2rem,6vw,3.2rem); line-height:1.05; letter-spacing:-.03em; margin:10px 0 14px; font-weight:800}
+    .sub{color:var(--ink-2); font-size:1.12rem; margin:0}
+    .updated{display:inline-block; margin-top:18px; font-size:.85rem; color:var(--ink-2);
+      border:1px solid var(--line); border-radius:999px; padding:5px 14px; background:var(--card)}
+
+    .badges{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:32px 0 8px}
+    .badge{background:var(--card); border:1.5px solid var(--ink); border-radius:14px; padding:18px 16px}
+    .badge b{display:block; font-size:1.02rem}
+    .badge span{color:var(--ink-2); font-size:.88rem}
+
+    .card{background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:24px 26px; margin-top:18px}
+    .card h2{font-size:1.2rem; margin:0 0 10px; letter-spacing:-.01em}
+    .card p{margin:0 0 10px}
+    .card p:last-child{margin-bottom:0}
+    ul{margin:6px 0 0; padding:0; list-style:none}
+    li{position:relative; padding:8px 0 8px 26px; border-top:1px solid var(--line)}
+    li:first-child{border-top:0}
+    li::before{content:""; position:absolute; left:2px; top:17px; width:10px; height:10px; border-radius:3px; background:var(--signal)}
+    .good li::before{background:var(--good)}
+    code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:.86em; background:var(--paper-2);
+      padding:1px 6px; border-radius:6px; word-break:break-all}
+
+    footer{margin-top:44px; padding-top:22px; border-top:1px solid var(--line); color:var(--ink-2); font-size:.9rem}
+    footer a{color:var(--ink-2)}
+    @media (max-width:600px){ .badges{grid-template-columns:1fr} .card{padding:20px 18px} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" aria-label="Pagezy home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#16181c"/><g transform="translate(14 14) scale(.5625)"><path d="M13 51V13H40A10 10 0 0 1 40 33H13" fill="none" stroke="#f2efe7" stroke-width="10" stroke-linejoin="round"/><rect x="2" y="2" width="22" height="22" rx="6" fill="#f2efe7"/><rect x="2" y="40" width="22" height="22" rx="6" fill="#f2efe7"/><path d="M46 12H54L62 20V28A6 6 0 0 1 56 34H46A6 6 0 0 1 40 28V18A6 6 0 0 1 46 12Z" fill="#d6336c"/></g></svg>
+        Pagezy
+      </a>
+    </nav>
+
+    <header>
+      <span class="eyebrow">Privacy policy</span>
+      <h1>Pagezy collects nothing.</h1>
+      <p class="sub">Your documents stay on your computer. There is no account, no cloud and
+      no telemetry. This page lists every connection Pagezy can make, which is two.</p>
+      <span class="updated">Last updated 25 September 2026</span>
+    </header>
+
+    <section class="badges" aria-label="Privacy highlights">
+      <div class="badge"><b>No telemetry</b><span>No analytics, crash reporting or tracking</span></div>
+      <div class="badge"><b>No account</b><span>Nothing to sign up for or log in to</span></div>
+      <div class="badge"><b>Offline</b><span>Your files are never uploaded</span></div>
+    </section>
+
+    <div class="card">
+      <h2>What Pagezy is</h2>
+      <p>Pagezy is a desktop PDF reader and editor made by Faisal Malik at zylio. It runs on
+      your computer and works on the files you open with it. It does not have a server,
+      a website login or any online features.</p>
+    </div>
+
+    <div class="card">
+      <h2>The only connections Pagezy can make</h2>
+      <ul>
+        <li><strong>Checking for updates, once a day.</strong> It is on by default, and the
+          first screen Pagezy shows lets you switch it off (so does
+          <strong>Settings</strong>). Pagezy sends one request to GitHub
+          (<code>api.github.com/repos/faisalrasheed442/pagezy-releases/releases</code>)
+          to see whether a newer version exists. If GitHub is busy, it reads the public
+          release feed at <code>github.com/faisalrasheed442/pagezy-releases/releases.atom</code>
+          instead. The request carries no cookies and
+          no identifier; its User-Agent says only <code>Pagezy/&lt;version&gt;</code>.
+          GitHub sees your IP address, as it does for any visit, under
+          <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.
+          If you choose to install an update, Pagezy downloads it from the same release
+          and checks it before running it. Nothing is downloaded until you click.</li>
+        <li><strong>Downloads you start yourself.</strong> For example an extra OCR language
+          pack. Pagezy tells you what it will download and from where before it starts,
+          and fetches nothing else.</li>
+      </ul>
+      <p style="margin-top:14px">Every connection is written to the network log in
+      <strong>Settings</strong>, so you can check this for yourself. Normally it shows
+      only the daily update check.</p>
+    </div>
+
+    <div class="card good">
+      <h2>What Pagezy never does</h2>
+      <ul>
+        <li>Upload, scan or read your documents anywhere but on your computer.</li>
+        <li>Send usage statistics, crash reports, analytics or any identifier.</li>
+        <li>Show ads, or share or sell any information with anyone.</li>
+        <li>Run JavaScript embedded in PDFs, or load remote content from a document.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>What stays on your computer</h2>
+      <p>Pagezy keeps its settings, your recent-files list, logs and recovery copies of
+      unsaved work in a folder on your computer (or next to the program, in the
+      portable edition). Only you can see them, and uninstalling can remove them.
+      Logs never leave your computer unless you choose to send one to us yourself.</p>
+    </div>
+
+    <div class="card">
+      <h2>Contacting us</h2>
+      <p>If you email us for support, we use your message only to answer it. We never
+      ask for your documents; if you choose to send a file to show a problem, it is
+      deleted once the problem is fixed.</p>
+    </div>
+
+    <footer>
+      Questions about this policy? <a href="mailto:support@zylio.net">support@zylio.net</a><br>
+      © 2026 zylio · Faisal Malik · <a href="index.html">Pagezy</a>
+    </footer>
+  </div>
+</body>
+</html>

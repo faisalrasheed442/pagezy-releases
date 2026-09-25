@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagezy — free offline PDF reader and editor</title>
+  <meta name="description" content="Pagezy is a free, offline PDF reader and editor for Windows, Linux and macOS. No account, no subscription, no telemetry. Every PDF. No subscription.">
+  <meta property="og:title" content="Pagezy — every PDF. No subscription.">
+  <meta property="og:description" content="A free, offline PDF reader and editor. No account, no cloud, no telemetry.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2316181c'/%3E%3Cg transform='translate(14 14) scale(.5625)'%3E%3Cpath d='M13 51V13H40A10 10 0 0 1 40 33H13' fill='none' stroke='%23f2efe7' stroke-width='10' stroke-linejoin='round'/%3E%3Crect x='2' y='2' width='22' height='22' rx='6' fill='%23f2efe7'/%3E%3Crect x='2' y='40' width='22' height='22' rx='6' fill='%23f2efe7'/%3E%3Cpath d='M46 12H54L62 20V28A6 6 0 0 1 56 34H46A6 6 0 0 1 40 28V18A6 6 0 0 1 46 12Z' fill='%23d6336c'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f2efe7; --paper-2:#e9e5da; --ink:#16181c; --ink-2:#4a4d55; --line:#d9d4c7;
+      --signal:#2553f5; --rose:#d6336c; --card:#faf8f3; --on-signal:#ffffff;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        --paper:#16181c; --paper-2:#1f2227; --ink:#f2efe7; --ink-2:#b3b0a8; --line:#2e3239;
+        --signal:#5b7cff; --rose:#e2507f; --card:#1c1f24; --on-signal:#ffffff;
+      }
+      .brand svg{border-radius:8px; box-shadow:0 0 0 1px var(--line)}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--paper); color:var(--ink);
+      font:17px/1.6 "Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--signal)}
+    .wrap{max-width:1040px; margin:0 auto; padding:0 16px 72px}
+
+    nav{display:flex; align-items:center; justify-content:space-between; padding:20px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem;
+      color:var(--ink); text-decoration:none; letter-spacing:-.01em}
+    .brand svg{width:32px; height:32px}
+    nav .links{display:flex; gap:20px; font-size:.95rem}
+    nav .links a{color:var(--ink-2); text-decoration:none}
+    nav .links a:hover{color:var(--ink)}
+
+    header{padding:64px 0 40px; display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center}
+    .eyebrow{display:inline-block; font-size:.8rem; font-weight:600; letter-spacing:.08em;
+      text-transform:uppercase; color:var(--rose); margin-bottom:14px}
+    h1{font-size:clamp(2.4rem,6vw,4.2rem); line-height:1.02; letter-spacing:-.035em;
+      font-weight:800; margin:0 0 20px}
+    h1 em{font-style:normal; color:var(--rose)}
+    .lede{font-size:1.18rem; color:var(--ink-2); max-width:30em; margin:0 0 30px}
+    .cta{display:flex; flex-wrap:wrap; gap:12px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:12px;
+      font-weight:600; font-size:1rem; text-decoration:none; border:1.5px solid var(--ink);
+      transition:transform .12s ease, box-shadow .12s ease}
+    .btn.primary{background:var(--signal); border-color:var(--signal); color:var(--on-signal);
+      box-shadow:0 3px 0 var(--ink)}
+    .btn.primary:hover{transform:translateY(-1px); box-shadow:0 4px 0 var(--ink)}
+    .btn.primary:active{transform:translateY(2px); box-shadow:0 1px 0 var(--ink)}
+    .btn.ghost{color:var(--ink); background:transparent}
+    .btn.ghost:hover{background:var(--paper-2)}
+    .btn svg{width:18px; height:18px}
+    .platforms{margin-top:16px; font-size:.9rem; color:var(--ink-2)}
+
+    .window{background:var(--card); border:1.5px solid var(--ink); border-radius:16px;
+      box-shadow:8px 8px 0 var(--ink); overflow:hidden}
+    .window .bar{display:flex; gap:6px; padding:10px 12px; border-bottom:1.5px solid var(--ink)}
+    .window .bar i{width:10px; height:10px; border-radius:50%; background:var(--line)}
+    .window .body{display:grid; grid-template-columns:64px 1fr; min-height:260px}
+    .window .side{border-right:1px solid var(--line); padding:10px 8px; display:grid; gap:8px; align-content:start}
+    .window .side b{display:block; height:78px; border:1px solid var(--line); border-radius:4px; background:var(--paper)}
+    .window .side b.on{border:2px solid var(--signal)}
+    .window .page{margin:18px auto; width:72%; background:#fff; border-radius:4px; padding:18px;
+      box-shadow:0 1px 4px rgba(0,0,0,.12)}
+    .window .page s{display:block; height:7px; border-radius:3px; background:#d9d6ce; margin:0 0 9px; text-decoration:none}
+    .window .page s.h{height:12px; width:60%; background:#16181c; margin-bottom:14px}
+    .window .page s.m{background:rgba(214,51,108,.35)}
+    .window .page s.short{width:70%}
+
+    .strip{display:flex; flex-wrap:wrap; gap:10px 28px; padding:22px 0; margin:20px 0 8px;
+      border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); font-weight:600}
+    .strip span::before{content:""; display:inline-block; width:8px; height:8px; border-radius:2px;
+      background:var(--rose); margin-right:10px; vertical-align:middle}
+
+    h2{font-size:clamp(1.6rem,3.4vw,2.2rem); letter-spacing:-.025em; line-height:1.1; margin:64px 0 24px; font-weight:800}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .feat{background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:22px}
+    .feat .ic{width:40px; height:40px; border-radius:10px; display:grid; place-items:center;
+      background:var(--paper-2); color:var(--signal); margin-bottom:14px}
+    .feat .ic svg{width:20px; height:20px}
+    .feat h3{margin:0 0 6px; font-size:1.08rem; letter-spacing:-.01em}
+    .feat p{margin:0; color:var(--ink-2); font-size:.95rem}
+
+    table{width:100%; border-collapse:collapse; font-size:.97rem}
+    th,td{text-align:left; padding:13px 10px; border-bottom:1px solid var(--line); vertical-align:top}
+    th{font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); font-weight:600}
+    td code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:.88em;
+      background:var(--paper-2); padding:2px 7px; border-radius:6px; word-break:break-all}
+    .table-wrap{overflow-x:auto}
+
+    .note{margin-top:20px; padding:16px 18px; border-left:4px solid var(--rose); background:var(--card);
+      border-radius:0 10px 10px 0; color:var(--ink-2); font-size:.95rem}
+    .support{margin-top:64px; padding:32px; border:1.5px solid var(--ink); border-radius:16px;
+      background:var(--card); display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between}
+    .support h2{margin:0 0 6px}
+    .support p{margin:0; color:var(--ink-2); max-width:34em}
+
+    footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--line); color:var(--ink-2);
+      font-size:.9rem; display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between}
+    footer a{color:var(--ink-2)}
+
+    @media (max-width:860px){
+      header{grid-template-columns:1fr; padding-top:32px; gap:36px}
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      nav .links a.hide-sm{display:none}
+      .window{box-shadow:5px 5px 0 var(--ink)}
+      .support{padding:22px}
+      th:nth-child(3),td:nth-child(3){display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Pagezy">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#16181c"/><g transform="translate(14 14) scale(.5625)"><path d="M13 51V13H40A10 10 0 0 1 40 33H13" fill="none" stroke="#f2efe7" stroke-width="10" stroke-linejoin="round"/><rect x="2" y="2" width="22" height="22" rx="6" fill="#f2efe7"/><rect x="2" y="40" width="22" height="22" rx="6" fill="#f2efe7"/><path d="M46 12H54L62 20V28A6 6 0 0 1 56 34H46A6 6 0 0 1 40 28V18A6 6 0 0 1 46 12Z" fill="#d6336c"/></g></svg>
+        Pagezy
+      </a>
+      <div class="links">
+        <a href="#features" class="hide-sm">Features</a>
+        <a href="#download">Download</a>
+        <a href="privacy-policy.html">Privacy</a>
+      </div>
+    </nav>
+
+    <header id="top">
+      <div>
+        <span class="eyebrow">Free PDF app by zylio</span>
+        <h1>Every PDF.<br><em>No subscription.</em></h1>
+        <p class="lede">Pagezy is a free PDF reader and editor that runs entirely on your
+        computer. No account to make, no cloud to upload to, no telemetry to switch off.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/faisalrasheed442/pagezy-releases/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Download Pagezy
+          </a>
+          <a class="btn ghost" href="#features">See what it does</a>
+        </div>
+        <p class="platforms">Windows 10/11 · Windows portable · Linux AppImage · macOS (Apple Silicon)</p>
+      </div>
+      <div class="window" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="side"><b class="on"></b><b></b><b></b></div>
+          <div class="page">
+            <s class="h"></s><s></s><s class="m"></s><s class="short"></s><s></s><s></s><s class="short"></s><s></s><s class="m short"></s><s></s>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="strip">
+      <span>Free forever</span><span>No account</span><span>Works offline</span><span>Zero telemetry</span><span>MIT licensed</span>
+    </div>
+
+    <h2 id="features">A PDF app that stays out of your way</h2>
+    <section class="grid">
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>Tabs for every document</h3>
+        <p>Open as many PDFs as you like, side by side in tabs, and pick up where you left off.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></div>
+        <h3>Search as you type</h3>
+        <p>Ctrl F highlights every match in the document the moment you start typing.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/><path d="m17 15 3 3-3 3"/></svg></div>
+        <h3>Ctrl K for everything</h3>
+        <p>Type what you want to do and press Enter. Every command shows its shortcut, so you learn as you go.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></div>
+        <h3>Easy on the eyes</h3>
+        <p>Light and dark themes, bigger text, and night pages that darken the document without changing the file.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/></svg></div>
+        <h3>Private by design</h3>
+        <p>Nothing leaves your computer. Settings shows a log of every connection Pagezy has ever made. Normally that is just the daily update check.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="14" rx="2"/><path d="M10 16v6h4v-6"/></svg></div>
+        <h3>Runs from a USB stick</h3>
+        <p>The portable edition keeps its settings in its own folder and writes nothing to the PC.</p>
+      </div>
+    </section>
+    <p class="note">Also in the box: editing text in place, forms and signatures, true redaction,
+    offline OCR for scans, conversion to Word, Excel and PowerPoint, and comparing two versions.
+    Each release says what it adds.</p>
+
+    <h2 id="download">Download</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Platform</th><th>File</th><th>How</th></tr></thead>
+        <tbody>
+          <tr><td><b>Windows 10/11</b></td><td><code>PagezySetup.exe</code></td><td>Run the installer</td></tr>
+          <tr><td><b>Windows portable</b></td><td><code>Pagezy-portable-win64.zip</code></td><td>Unzip anywhere, run <code>Pagezy.exe</code></td></tr>
+          <tr><td><b>Linux</b> (x86_64)</td><td><code>Pagezy-x86_64.AppImage</code></td><td><code>chmod +x</code> it, then run it</td></tr>
+          <tr><td><b>macOS</b> (Apple Silicon)</td><td><code>Pagezy-macOS-arm64.dmg</code></td><td>When a release has one. Right-click › Open the first time</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Windows may say “Windows protected your PC” because Pagezy is not code-signed yet.
+    Choose <b>More info</b>, then <b>Run anyway</b>. Each release lists SHA-256 checksums in
+    <code>manifest.json</code>.</p>
+
+    <section class="support">
+      <div>
+        <h2>Built by one person</h2>
+        <p>Pagezy is made by Faisal Malik at zylio, in the evenings. If it saved you a subscription,
+        you can chip in. Nothing is locked behind it, ever.</p>
+      </div>
+      <a class="btn ghost" href="https://www.patreon.com/zylio">Support on Patreon</a>
+    </section>
+
+    <footer>
+      <span>© 2026 zylio · Faisal Malik · MIT licence</span>
+      <span>
+        <a href="https://zylio.net/software/pagezy">zylio.net</a> ·
+        <a href="https://github.com/faisalrasheed442/pagezy-releases/releases">Releases</a> ·
+        <a href="privacy-policy.html">Privacy</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
