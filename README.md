@@ -9,6 +9,8 @@ account, no subscription, no cloud and no telemetry**.
 
 ![Pagezy reading an annual report, with page thumbnails and search matches highlighted](images/app-reader.png)
 
+**New to Pagezy?** The [user guide](guide/pagezy-guide.md) explains every feature, with a picture for every step.
+
 ---
 
 ## Key features
@@ -21,7 +23,7 @@ account, no subscription, no cloud and no telemetry**.
 | 🗂️ **Organize** | Reorder, rotate, delete, insert and extract pages in a grid. Combine files, split them, crop pages and **compress to a target size**. |
 | 📝 **Fill & sign** | Fill any form (calculations run safely — PDF scripts never run), make your own forms, and sign with a drawn, typed or image signature, or a certificate. |
 | 🛡️ **Protect** | Passwords and permissions, and **true redaction** that removes the content and checks the result. Find and redact CNIC numbers, phone numbers and emails in one go. |
-| 🔍 **Scan & OCR** | Make scanned pages searchable, offline. Clean up scans, import from a scanner, or **use your phone as a scanner** over Wi-Fi. |
+| 🔍 **Scan & OCR** | Make scanned pages searchable, offline, and **edit their text** like any other text. Clean up scans, import from a scanner, or **use your phone as a scanner** over Wi-Fi. |
 | 🔄 **Convert** | Export to **Word, Excel, PowerPoint**, images, text and HTML; extract tables; PDF/A, preflight and accessibility checks; booklet and n-up printing. |
 | ⚖️ **Compare** | Two versions side by side, with every change listed. |
 | ⌨️ **Ctrl K** | Type what you want to do and press Enter. Every command shows its shortcut. |
