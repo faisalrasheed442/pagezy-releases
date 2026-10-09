@@ -5,7 +5,7 @@ description: Everything Pagezy can do, from opening your first PDF to editing te
 
 # Pagezy user guide
 
-Pagezy is a free PDF app for Windows and Linux. It reads, edits, comments, organizes, fills, signs, protects, scans, converts and compares PDFs, and it does all of that on your own computer. There is no account, no subscription and no upload: your files never leave your PC.
+Pagezy is a free PDF app for Windows and Linux. You can change the words already on a page, fill in and sign forms, black out text so it's really gone, turn a scan into searchable text and export to Word, and all of it happens on your own computer. There's no account, no subscription and no upload: your files never leave your PC.
 
 This guide covers every part of the app. If you are new, read **Part 1** first; it takes about five minutes. After that, jump to whatever you need from the contents.
 
@@ -100,7 +100,7 @@ In the pictures, **blue numbered boxes** show what to look at or click. The numb
 
 ## 1. What you need
 
-- **Windows 10 or 11 (64-bit)**, or a **64-bit Linux** desktop.
+- **Windows 10 or 11 (64-bit)**, or a **64-bit Linux** desktop. There's no Mac version.
 - About 500 MB of free disk space.
 - Nothing else. Pagezy needs no account and no internet connection to work.
 
@@ -125,7 +125,7 @@ Download Pagezy from [zylio.net/software/pagezy](https://zylio.net/software/page
 **Installing on Windows:**
 
 1. Open **PagezySetup.exe**.
-2. If Windows shows **"Windows protected your PC"**, click **More info**, then **Run anyway**. Windows shows this for new apps it hasn't seen many times yet.
+2. If Windows shows **"Windows protected your PC"**, click **More info**, then **Run anyway**. Pagezy's installer isn't code-signed yet, and SmartScreen warns about unsigned apps until enough people have run them.
 3. Windows asks for permission to install. Click **Yes**.
 4. On **Select Additional Tasks** you can tick **Create a desktop shortcut**. You can also tick **Open .pdf files with Pagezy**, though Windows 10 and 11 let you confirm that yourself; Pagezy guides you through it later ([section 51](#51-settings)).
 5. Click **Install**, leave **Launch Pagezy** ticked, and click **Finish**.
@@ -1506,7 +1506,7 @@ A checker can't prove a file is accessible: reading order, alt text and colour c
 4. The answer: the sentences from the PDF that answer your question, each with a page button such as **p. 4**. Click it to jump there; the sentence is highlighted. **Copy with citations** copies the answer with its pages. If the answer isn't in the document, Pagezy says so and shows the closest passages.
 5. Type your question and press **Enter**. Before you ask, Pagezy suggests a few questions from the document's headings.
 
-Answers quote the PDF itself, so you can always check them.
+Pagezy doesn't write answers of its own. It picks out the sentences in your PDF that answer the question, so every answer can be checked against its page.
 
 **Summarize** (Ctrl+Shift+M, or **Summarize…** in the Ask panel) picks the most important sentences of the document:
 
@@ -1817,4 +1817,4 @@ Uninstalling (Windows Settings › Apps › Pagezy › Uninstall) keeps your set
 - **Website:** [zylio.net/software/pagezy](https://zylio.net/software/pagezy)
 - **Email:** [support@zylio.net](mailto:support@zylio.net). Tell us what you did and what happened. Settings › Advanced shows where Pagezy's log file is, if we ask for it.
 
-Pagezy is free, and stays free. It is made by zylio.
+Pagezy is free and stays free. It's made by one person at zylio. If a step in this guide doesn't match what you see on screen, email us and the guide gets fixed.
