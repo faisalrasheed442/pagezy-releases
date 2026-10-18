@@ -152,24 +152,24 @@ Home is where Pagezy starts when no file is open. You can come back to it any ti
 
 ![Home, with recent files and pinned tools](images/home-start.png)
 
-1. **Start** shows the page you see here.
-2. **Find a tool** searches every tool by name or description.
-3. **Open file** (Ctrl+O) opens a PDF. Next to it, **Images to PDF** and **Blank PDF** start a new file. You can also drop files anywhere on the window.
-4. **Pinned tools** are shortcuts to the tools you use most. Right-click any tool (here or in a category) and choose **Pin to Start** or **Unpin from Start**.
-5. **Recent** lists the files you opened, with the page you stopped on. Click one to open it right where you left off. Right-click a file to **Pin to top**, **Remove from list** or **Show in folder**. **Clear list** empties the list but keeps pinned files.
+1. **Open file** (Ctrl+O) opens a PDF. Next to it, **Combine files**, **Images to PDF**, **Scan with phone** and **Blank PDF** start something new. You can also drop files anywhere on the window, or on the box on the right.
+2. **Continue where you left off** shows the files you opened, each with a picture of the page you stopped on and a blue line showing how far you read. Click one to open it right where you left off. Right-click a file to **Pin to top**, **Remove from list** or **Show in folder**. **Clear list** empties the list but keeps pinned files.
+3. **Tools**: the chips choose what to show. **Pinned** shows the tools you use most; the other chips show one kind of tool each.
+4. **Pinned tools.** Right-click any tool and choose **Pin to Home** or **Unpin from Home**.
+5. **Find a tool** searches every tool by name or description.
 6. The search box opens the command palette ([section 10](#10-the-command-palette)).
 7. **Settings** ([section 51](#51-settings)).
 
-Under **Tools**, the sidebar lists six groups with the number of tools in each: **Edit & review**, **Organize**, **Convert & scan**, **Forms & sign**, **Protect** and **Power tools**.
+The chips after **Pinned** are the six kinds of tools: **Edit & review**, **Organize**, **Convert & scan**, **Forms & sign**, **Protect** and **Power tools**.
 
-![Home showing the Organize group: combine, split, compress, crop and more](images/home-category.png)
+![Home showing the Organize tools: combine, split, compress, crop and more](images/home-category.png)
 
-1. Click a group to see its tools, each with a one-line description.
+1. Click a chip to see its tools. Each tool has a one-line description; point at it to read all of it.
 2. Click a tool to use it. If it needs a file and none is open, Pagezy asks you to open one first.
 
 ![Home search: typing 'word' finds every tool that mentions it](images/home-search.png)
 
-1. Type in **Find a tool**. Each result shows which group it belongs to. Clear the box to go back to Start.
+1. Type in **Find a tool**. Each result shows which group it belongs to. Clear the box to go back to your pinned tools.
 
 The full list of tools on Home:
 
@@ -189,16 +189,18 @@ The full list of tools on Home:
 1. **The Pagezy logo** takes you to Home.
 2. **Tabs.** Every open file has its own tab. A small dot means the file has unsaved changes. Drag tabs to reorder them; click **×** to close one.
 3. **The search box** opens the command palette (Ctrl+K): type any tool, command, page number or word.
-4. **The mode bar.** Pagezy groups its tools into modes: **Read**, **Comment**, **Edit**, **Organize**, **Forms**, **Sign**, **Protect**, **Scan & OCR**, **Convert** and **Compare**. **All tools** opens the tool list on Home.
-5. **The tool strip** shows the tools of the current mode. On a small window, tools that don't fit go into a **More** menu at the end.
-6. **The rail** opens the side panels on the left: Pages, Bookmarks, Search, Signatures and Ask this PDF, plus Attachments and Layers when a file has them.
+4. **The mode rail.** Pagezy groups its tools into modes: **Read**, **Comment**, **Edit**, **Organize**, **Forms**, **Sign**, **Protect**, **Scan** (Scan & OCR), **Convert** and **Compare**. All tools are on Home: click the logo, or press **Ctrl+K** and type a tool's name.
+5. **The toolbar** floats above the page and shows the tools of the current mode, with the mode's name at its start. On a small window, tools that don't fit go into a **More** menu at the end.
+6. **Panel buttons**, under the modes, open the side panels: Pages, Bookmarks, Search, Signatures and Ask this PDF, plus Attachments and Layers when a file has them.
 7. **The left panel**, here showing page thumbnails.
-8. **The page area.** Messages about the file (for example "This page is a scan") appear as coloured bars across its top.
-9. **The status bar:** page number, zoom, page layout and night pages ([section 7](#7-move-around-the-pages)).
-10. **Undo**, **Redo**, **Print** and **Save**. In modes that have a right-hand panel, a list button here shows or hides it (**Ctrl+Shift+P**).
-11. **Split view**, **Dark mode** and **Settings**.
+8. **The page area.** Messages about the file (for example "This page is a scan") appear as coloured bars across its top, and short notes such as "Saved" appear for a moment in its bottom-left corner.
+9. **The page bar**, floating under the pages: page number, zoom, page layout and night pages ([section 7](#7-move-around-the-pages)).
+10. **Undo** and **Redo**. In modes that have a right-hand panel, a list button just before them shows or hides it (**Ctrl+Shift+P**).
+11. **Split view** and **Dark mode**.
+12. **Print** and **Save**.
+13. **Settings**.
 
-At the right end of the status bar, the green dot and **Offline · nothing leaves this PC** remind you that Pagezy works without the internet.
+Next to the search box, **● Offline** reminds you that Pagezy works without the internet: nothing leaves your PC. The clock button beside it lists background tasks.
 
 Every change you make is one step you can undo with **Ctrl+Z** (redo with **Ctrl+Shift+Z** or **Ctrl+Y**). Nothing is written to the file until you save.
 
@@ -225,11 +227,12 @@ Each file reopens at the page, zoom and layout you left it at. You can also open
 
 - **Save** (Ctrl+S) writes your changes. Pagezy writes a temporary copy, checks it, and only then replaces the file, so a failed save never damages it.
 - **Save as…** (Ctrl+Shift+S) saves a copy under a new name.
-- The first time you save an edited file, Pagezy keeps the untouched original beside it as `name.orig.pdf`. You can turn this off in Settings › General.
+- The first time you save an edited file, Pagezy keeps the untouched original beside it as `name.orig.pdf`. You can turn this off in Settings › General. After you apply redactions, Pagezy never keeps that copy, because it would still hold what you removed.
+- **Signed files.** If a file has certificate signatures and your changes would make them invalid, **Save** asks first: **Save anyway**, or **Save a copy…** to keep the signed original as it is.
 
 **Closing.** Close a tab with **×** or **Ctrl+W**; Pagezy asks before closing a file with unsaved changes. **Ctrl+Tab** and **Ctrl+Shift+Tab** move between tabs, and **Ctrl+3** to **Ctrl+9** jump to tabs 3 to 9. Quit with **Ctrl+Q**. The next time you start Pagezy, it reopens the files you had open.
 
-**If Pagezy or your PC stops unexpectedly**, nothing is lost: while a file has unsaved changes, Pagezy keeps a recovery copy every 30 seconds. At the next start it asks **Restore unsaved work?** Choose **Restore** to get your changes back, or **Discard**. If you just close the question, the copies are kept and offered again next time.
+**If Pagezy or your PC stops unexpectedly**, nothing is lost: while a file has unsaved changes, Pagezy keeps a recovery copy every 30 seconds. At the next start it asks **Restore unsaved work?** Choose **Restore** to get your changes back, or **Discard**. If you just close the question, the copies are kept and offered again next time. Files protected with a password get no recovery copy, so their content is never written to disk unprotected.
 
 ---
 
@@ -247,16 +250,16 @@ Each file reopens at the page, zoom and layout you left it at. You can also open
 4. **Find** (Ctrl+F): search the text ([section 8](#8-find-text)).
 5. **Copy** (Ctrl+C): copy the selected text.
 
-**The status bar**
+**The page bar**
 
-![The status bar: page number, zoom, page layout, night pages, background tasks and the offline indicator](images/read-statusbar.png)
+![The page bar under the pages: previous and next page, page number, zoom, page layout and night pages](images/read-statusbar.png)
 
-1. **Page.** Type a page number (or a page label such as "iv") and press Enter. **Ctrl+G** puts the cursor here.
-2. **Zoom.** Use **−** and **+**, or choose **Fit width**, **Fit page**, **Actual size** or a percentage. You can type any percentage.
+1. **Page.** Use **‹** and **›**, or type a page number (or a page label such as "iv") and press Enter. **Ctrl+G** puts the cursor here.
+2. **Zoom.** Use **−** and **+**, or choose **Automatic**, **Fit width**, **Fit page**, **Actual size** or a percentage. You can type any percentage. **Automatic** (the default) fits the page to the window's width but never makes it bigger than its actual size, so pages don't blow up on a wide screen.
 3. **Page layout** ([see below](#page-layouts)).
 4. **Night pages** ([section 11](#11-comfortable-reading)).
-5. **Background tasks.** Long jobs such as OCR, exports and batch runs run in the background while you keep working. This button shows how many are running; click it to see their progress or cancel one.
-6. **Offline · nothing leaves this PC.**
+
+**Background tasks.** Long jobs such as OCR, exports and batch runs run in the background while you keep working. The clock button at the top, next to **● Offline**, shows how many are running; click it to see their progress or cancel one.
 
 **Keys and mouse**
 
@@ -308,11 +311,11 @@ Press **Esc** to close the bar.
 
 ### The Search panel
 
-The Search panel lists every match with the words around it. Open it with the magnifier on the rail, **Ctrl+Shift+F**, or **All results** in the find bar.
+The Search panel lists every match with the words around it. Open it with the magnifier under the modes, **Ctrl+Shift+F**, or **All results** in the find bar.
 
 ![The Search panel listing every match for 'market' with the words around it](images/read-search.png)
 
-1. The **Search** button on the rail.
+1. The **Search** panel button, under the modes.
 2. Type and press Enter.
 3. **Case**, **Whole word** and **Regex** work as in the find bar.
 4. How many results, on how many pages.
@@ -322,7 +325,7 @@ To search many PDFs at once, use **Search in folder** ([section 47](#47-search-i
 
 ## 9. The side panels
 
-The rail on the left opens one panel at a time. Click the same button again to close it.
+The panel buttons under the modes open one panel at a time. Click the same button again to close it.
 
 **Pages** shows a thumbnail of every page. Click one to go there. (To move, rotate or delete pages, use Organize: [section 20](#20-the-page-grid).)
 
@@ -330,7 +333,7 @@ The rail on the left opens one panel at a time. Click the same button again to c
 
 ![The Bookmarks panel with its add, point-here and delete buttons](images/read-bookmarks.png)
 
-1. The **Bookmarks** button on the rail.
+1. The **Bookmarks** panel button, under the modes.
 2. **+** adds a bookmark (Ctrl+B). Select a heading on the page first and the bookmark is named after it and points at it.
 3. The pin points the selected bookmark at what you're looking at now.
 4. The bin deletes the selected bookmark (Delete).
@@ -366,7 +369,7 @@ Some commands are only in the palette, for example **About Pagezy**, **Check for
 
 **Dark mode** (Ctrl+Shift+D, or the moon button at the top) changes Pagezy's own look.
 
-**Night pages** (Ctrl+Shift+N, or the drop button in the status bar) also shows the pages light-on-dark: white paper becomes dark grey and black text turns light, while photos keep their real colours. It only changes what you see; printing and saving use the real colours.
+**Night pages** (Ctrl+Shift+N, or the drop button in the page bar) also shows the pages light-on-dark: white paper becomes dark grey and black text turns light, while photos keep their real colours. It only changes what you see; printing and saving use the real colours.
 
 **Read mode** (Ctrl+Shift+H) hides everything except the page.
 
@@ -377,7 +380,7 @@ Some commands are only in the palette, for example **About Pagezy**, **Check for
 
 Press **Esc** or **Ctrl+Shift+H** to leave read mode.
 
-**Full screen** (F11) fills the screen with the window; press **F11** again to return.
+**Full screen** (F11) fills the screen with the window; press **F11** or **Esc** to return.
 
 **Present** shows one page at a time on a black screen, like a slideshow. **F5** starts from the current page, **Shift+F5** from the first page.
 
@@ -400,7 +403,7 @@ To advance pages on a timer, set **Advance pages every** in Settings › **Prese
 ![Split view: the annual report and its revised copy side by side](images/read-split.png)
 
 1. The **Split view** button.
-2. The main pane. Toolbars and the status bar work on this one.
+2. The main pane. The toolbar and the page bar work on this one.
 3. The second pane shows your other open file (or the same file again if only one is open). It scrolls and zooms on its own.
 
 To make both panes scroll together, run **Scroll split views together** from the command palette. Click **Split view** again to close the second pane.
@@ -441,7 +444,7 @@ On the right, **At a glance** sums up the file: pages, size, security, signature
 
 ## 13. Comment
 
-Comments are notes and marks on top of the page: highlights, sticky notes, drawings, stamps and measurements. They don't change the page itself, and other PDF apps such as Acrobat show them too. Switch to **Comment** in the mode bar (**Ctrl+Shift+C**).
+Comments are notes and marks on top of the page: highlights, sticky notes, drawings, stamps and measurements. They don't change the page itself, and other PDF apps such as Acrobat show them too. Switch to **Comment** in the mode rail (**Ctrl+Shift+C**).
 
 Your name goes on every comment you add. Set it in Settings › **Comments** › **Author name**; if it's empty, Pagezy uses your Windows user name.
 
@@ -546,7 +549,7 @@ Then choose a tool from the **Measure** menu:
 - **Perimeter:** click each point, then press Enter.
 - **Area:** click each corner, then press Enter or click the first point.
 
-The status bar shows the value while you draw. **Export measurements (CSV)…** in the same menu saves every measurement for Excel.
+The value shows in the bottom-left corner of the page area while you draw. **Export measurements (CSV)…** in the same menu saves every measurement for Excel.
 
 ### Share comments
 
@@ -559,7 +562,7 @@ The status bar shows the value while you draw. **Export measurements (CSV)…** 
 
 ## 14. Compare two versions
 
-Compare shows every word that was added, removed or changed between two versions of a document, side by side. Switch to **Compare** in the mode bar, or press **Ctrl+Alt+C**.
+Compare shows every word that was added, removed or changed between two versions of a document, side by side. Switch to **Compare** in the mode rail, or press **Ctrl+Alt+C**.
 
 ![Choosing the old and new files to compare, with page ranges and what to ignore](images/compare-files.png)
 
@@ -612,7 +615,7 @@ The report lists both files' SHA-256 fingerprints, which prove exactly which ver
 
 ## 15. Edit text and pictures
 
-Switch to **Edit** in the mode bar (**Ctrl+Shift+E**) to change the words and pictures on the page itself.
+Switch to **Edit** in the mode rail (**Ctrl+Shift+E**) to change the words and pictures on the page itself.
 
 ![The Edit tools: edit text and images, add text, add image, link, find and replace, page marks, interactive and document setup](images/edit-tools.png)
 
@@ -697,7 +700,7 @@ Press **Ctrl+H** (or click **Find & replace**).
 
 ![Find and replace: replacing 'Landlord' with 'Owner' across the agreement](images/edit-replace.png)
 
-1. **Find & replace** in the tool strip.
+1. **Find & replace** in the toolbar.
 2. **Find**: the words to look for.
 3. **Replace with**.
 4. **Match case**, **Whole word**, **Regex**, and **Keep case** (which keeps capitals as they were: fifth → tenth, Fifth → Tenth, FIFTH → TENTH).
@@ -778,7 +781,7 @@ The matched fonts are standard faces, so the text looks close to the original bu
 
 ## 20. The page grid
 
-Switch to **Organize** in the mode bar (**Ctrl+Shift+O**). Every page appears as a thumbnail.
+Switch to **Organize** in the mode rail (**Ctrl+Shift+O**). Every page appears as a thumbnail.
 
 ![The Organize page grid with two pages selected](images/organize-grid.png)
 
@@ -972,7 +975,7 @@ When you open a PDF with fillable fields, Pagezy switches to **Forms** › **Fil
 
 **Totals and formats work for you.** Pagezy formats numbers, dates and phone numbers as the form expects, and adds up totals as you type. It never runs scripts from the PDF: it does the standard form calculations itself, safely.
 
-**Mistakes are marked, not blocked.** A value that doesn't fit (for example a date that doesn't exist) is kept but marked red, with a message such as "Enter a date like dd/mm/yyyy" in the status bar.
+**Mistakes are marked, not blocked.** A value that doesn't fit (for example a date that doesn't exist) is kept but marked red, with a message such as "Enter a date like dd/mm/yyyy" in the bottom-left corner of the page area.
 
 **Signed forms.** If the form is already signed, Pagezy warns you before your first change: filling it changes the file, so the existing signatures will show as changed. Use **Save as** if you need to keep the signed original.
 
@@ -1020,7 +1023,7 @@ Pagezy never runs scripts from a PDF. **Show scripts** in the panel lists any th
 
 ## 28. Fill and sign any PDF
 
-**Fill & sign** lets you type, tick and sign anywhere on a PDF, even one without form fields. Switch to **Sign** in the mode bar.
+**Fill & sign** lets you type, tick and sign anywhere on a PDF, even one without form fields. Switch to **Sign** in the mode rail.
 
 ![Sign mode: the Fill and Sign tools, a placed signature and date, and the panel](images/sign-tools.png)
 
@@ -1133,7 +1136,7 @@ When a signed copy comes back, choose **Request signatures** › **Check a retur
 
 # Part 7. Protect
 
-Switch to **Protect** in the mode bar.
+Switch to **Protect** in the mode rail.
 
 ![Protect mode: the tools, the security status and six redaction marks on an agreement](images/protect-tools.png)
 
@@ -1384,7 +1387,7 @@ Choose a format from **Export**, press **Ctrl+E**, or use Home › **PDF to Word
 2. The options for that format. For Word: **Images**, **Tables as Word tables** and **Keep PDF page breaks**. For Excel: one sheet per table, per page, or for the whole document, and **Detect numbers**. For images: resolution, colour and JPEG quality.
 3. **Pages**: all, the current page, or a range.
 4. **Open the file when done**.
-5. **Before you export**: how well each page will convert. **Tier A** pages keep their text, order, styles and tables; **Tier B** pages have columns or rotated text and may drift; **Tier C** pages are scans with no text, so recognize them first ([section 35](#35-make-a-scan-searchable)).
+5. **Pagezy found**: how many pages have text, how many are laid out in columns, and how many tables and headings it found. Columns, tables, lists, headers and footers are kept in the result. Scanned pages have no text to export, so recognize them first ([section 35](#35-make-a-scan-searchable)).
 6. **Export 10 pages**. Choose where to save; a green bar then offers **Open** and **Show in folder**.
 
 **Batch export…** converts many PDFs to the same format in one go. The files you add are never changed, and existing files are never overwritten.
@@ -1496,11 +1499,11 @@ A checker can't prove a file is accessible: reading order, alt text and colour c
 
 ## 46. Ask this PDF and Summarize
 
-**Ask this PDF** (Ctrl+Shift+A, or the speech-bubble button on the rail) answers questions about the open file in plain words, with the page each answer comes from. It runs on your PC and only uses this PDF.
+**Ask this PDF** (Ctrl+Shift+A, or the speech-bubble panel button under the modes) answers questions about the open file in plain words, with the page each answer comes from. It runs on your PC and only uses this PDF.
 
 ![Ask this PDF answering 'How much is the security deposit?' with page citations](images/power-ask.png)
 
-1. The **Ask this PDF** button on the rail.
+1. The **Ask this PDF** panel button, under the modes.
 2. How many pages were read. Scanned pages without text can't be asked about until you recognize them ([section 35](#35-make-a-scan-searchable)).
 3. Ask about the **Whole document**, **This page**, or chosen **Pages…**.
 4. The answer: the sentences from the PDF that answer your question, each with a page button such as **p. 4**. Click it to jump there; the sentence is highlighted. **Copy with citations** copies the answer with its pages. If the answer isn't in the document, Pagezy says so and shows the closest passages.
@@ -1638,8 +1641,8 @@ Open **Settings** with the gear button or **Ctrl+,**. Changes apply straight awa
 | Section | What you can set |
 |---|---|
 | **General** | **Keep the original as name.orig.pdf** when you save an edited file · **Reopen the files I had open** · how often a **Recovery copy** is saved · how many **Recent files** to remember |
-| **Appearance** | **Theme** (Light or Dark) · **Text size** of Pagezy itself · **Night pages** · **Sharp text** (smoother text on ordinary screens) |
-| **Page display** | The **Default zoom** and **Page layout** for files you open for the first time |
+| **Appearance** | **Theme** (Light or Dark) · **Text size** of Pagezy itself · **Night pages** · **Sharp text**: smoother text on ordinary screens, and **Darker, crisper letters** for small text that looks thin or grey |
+| **Page display** | The **Default zoom** (**Automatic**, Fit width, Fit page or Actual size) and **Page layout** for files you open for the first time |
 | **Reading** | **Vim-style keys** (j and k to scroll, g and G for the first and last page) · **Ask before opening web links** |
 | **Accessibility** | **Interface text size** |
 | **Keyboard shortcuts** | Change any shortcut ([section 52](#52-keyboard-shortcuts)) |
@@ -1735,9 +1738,9 @@ Comment, Sign, Scan & OCR and the Organize page grid also have single-letter key
 
 Once a day, Pagezy checks whether a new version is out. That is its only automatic connection, and you can turn it off in Settings › **Updates**. Nothing is shown unless there's a new version. When there is:
 
-![The status bar showing an update ready next to the background tasks button](images/app-update-notice.png)
+![The top bar showing an update ready next to the background tasks button](images/app-update-notice.png)
 
-1. **Background tasks**, at the right end of the status bar.
+1. **Background tasks**, the clock button at the top of the window.
 2. **Update ready** appears next to it. Click it to see what's new.
 
 ![What's new in the next version, with Later, Skip, Open zylio.net and Download and install](images/app-whats-new.png)
@@ -1759,6 +1762,7 @@ The portable version and the Linux AppImage don't install updates themselves: do
 
 | Problem | What to do |
 |---|---|
+| **Pages look too big, or text looks thin and grey** | Choose **Automatic** in the zoom box, and check that both **Sharp text** options are on in Settings › Appearance. |
 | **Find doesn't find words I can see** | The page is probably a scan. Make it searchable ([section 35](#35-make-a-scan-searchable)). |
 | **Exported Word file is empty** | The pages are scans with no text. Recognize the text first, then export. |
 | **My edit looks slightly different** | The file's font lacked a letter, so a similar font was used. The panel says which font drew your letters ([section 15](#15-edit-text-and-pictures)). |
