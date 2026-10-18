@@ -108,9 +108,9 @@ A few optional extras unlock more:
 
 | Optional extra | What it adds |
 |---|---|
-| **LibreOffice** (free) | Turning Word, Excel and PowerPoint files into PDFs ([section 42](#42-create-a-pdf)). |
-| **Tesseract** (free) | Text recognition in more than 100 languages, including Urdu, Arabic and Hindi ([section 35](#35-make-a-scan-searchable)). The built-in recognizer already reads English, other Latin-script languages and Chinese. |
-| **veraPDF** (free) | An official second opinion when you save a PDF/A archive copy ([section 44](#44-check-a-file-before-printing-or-archiving)). |
+| **Microsoft Office** or **LibreOffice** (free) | Turning Word, Excel and PowerPoint files into PDFs that look exactly like the original ([section 42](#42-create-a-pdf)). Without either, Word files still convert in a simple layout. |
+| **Tesseract** (free) | Text recognition in more than 100 languages ([section 35](#35-make-a-scan-searchable)). The built-in recognizer already reads English, other Latin-script languages and Chinese, and Urdu, Arabic, Persian, Hindi and Russian with a free script pack. |
+| **veraPDF** (free) | An official second opinion when you save a PDF/A archive copy ([section 44](#save-as-pdfa-pdfx-or-an-e-invoice)). |
 
 ## 2. Install Pagezy
 
@@ -160,6 +160,8 @@ Home is where Pagezy starts when no file is open. You can come back to it any ti
 6. The search box opens the command palette ([section 10](#10-the-command-palette)).
 7. **Settings** ([section 51](#51-settings)).
 
+Once you save a workspace (a set of files you open together, [section 6](#6-open-save-and-close-files)), a **Workspaces** row appears under your recent files. Click one to open its files; right-click it to **Open in a new window**, **Rename…** or **Delete** it.
+
 The chips after **Pinned** are the six kinds of tools: **Edit & review**, **Organize**, **Convert & scan**, **Forms & sign**, **Protect** and **Power tools**.
 
 ![Home showing the Organize tools: combine, split, compress, crop and more](images/home-category.png)
@@ -175,11 +177,11 @@ The full list of tools on Home:
 
 | Group | Tools |
 |---|---|
-| **Edit & review** | Edit text & images · Find & replace · Header/footer & watermark · Bates numbering · Document properties · Comment · Stamp · Measure · Export comments · Compare |
+| **Edit & review** | Edit text & images · Find & replace · Header/footer & watermark · Bates numbering · Document properties · Comment · Stamp · Measure · Export comments · Send for review · Merge comments · Compare |
 | **Organize** | Organize pages · Combine files · Split · Compress · Crop pages · Page labels · Remove blank pages |
 | **Convert & scan** | PDF to Word · OCR scans · PDF to Excel · Export images · Extract tables · Create PDF · Print · Enhance scans · Images to PDF · Scan with phone · Scan from scanner |
 | **Forms & sign** | Fill form · Prepare form · Fill & sign · Certificate signature · Digital IDs · Validate signatures |
-| **Protect** | Protect with password · Redact · Find & redact · Sanitize · Remove security · Classification label |
+| **Protect** | Protect with password · Encrypt for people · Redact · Find & redact · Sanitize · Remove security · Classification label |
 | **Power tools** | Compare files · Batch pipelines · Ask this PDF · Search in folder · PDF/A · Summarize · Read aloud · Preflight · Accessibility check · Command line · Share / send |
 
 ## 5. A tour of the window
@@ -187,7 +189,7 @@ The full list of tools on Home:
 ![The Pagezy window with its parts numbered](images/window-tour.png)
 
 1. **The Pagezy logo** takes you to Home.
-2. **Tabs.** Every open file has its own tab. A small dot means the file has unsaved changes. Drag tabs to reorder them; click **×** to close one.
+2. **Tabs.** Every open file has its own tab. A small dot means the file has unsaved changes. Drag tabs to reorder them; click **×** to close one. Drag a tab down out of the row to give it a window of its own, and right-click the tabs for **New window** and **Workspaces** ([section 6](#6-open-save-and-close-files)).
 3. **The search box** opens the command palette (Ctrl+K): type any tool, command, page number or word.
 4. **The mode rail.** Pagezy groups its tools into modes: **Read**, **Comment**, **Edit**, **Organize**, **Forms**, **Sign**, **Protect**, **Scan** (Scan & OCR), **Convert** and **Compare**. All tools are on Home: click the logo, or press **Ctrl+K** and type a tool's name.
 5. **The toolbar** floats above the page and shows the tools of the current mode, with the mode's name at its start. On a small window, tools that don't fit go into a **More** menu at the end.
@@ -217,20 +219,38 @@ Each file reopens at the page, zoom and layout you left it at. You can also open
 
 - **Pictures** (JPG, PNG, TIFF, BMP, GIF, WebP, HEIC): each becomes a new PDF. Drop two or more at once and Pagezy asks whether to **Combine into one PDF** or **Open each**.
 - **Web pages and text files** (.html, .txt, .md): turned into a PDF on your PC.
-- **Word, Excel and PowerPoint files**: turned into a PDF if LibreOffice is installed ([section 42](#42-create-a-pdf)).
+- **Word, Excel and PowerPoint files**: turned into a PDF by Microsoft Office or LibreOffice if one is installed; Word files also convert without them, in a simple layout ([section 42](#42-create-a-pdf)).
 
-**Password-protected files.** Pagezy asks for the password in **This PDF is protected**. Tick **Show password** to see what you type. The password is only kept while the file is open, and the file keeps its protection when you save.
+**Big files** open in the background: the window keeps working, and if it takes more than a moment a card shows how far along it is, with **Cancel**. Saving a big file works the same way.
 
-**Damaged files.** Pagezy repairs them automatically when it can, and tells you with a yellow bar: "This file was damaged. Pagezy repaired it; save to keep the repaired copy."
+**Password-protected files.** Pagezy asks for the password in **This PDF is protected**. Tick **Show password** to see what you type. The password is only kept while the file is open, and the file keeps its protection when you save: the same open password, the same restrictions, and the author's permissions password still works, even though you only typed the open password (or none, for a file that only restricts printing or copying). To change the protection, use **Password** in Protect ([section 31](#31-passwords-and-permissions)).
+
+**Damaged files.** Pagezy repairs them automatically when it can, and tells you with a yellow bar: "This file was damaged. Pagezy repaired it; save to keep the repaired copy." When it can't be repaired but its pages can still be shown, the file opens to read only, with the bar "Opened read-only: this file is damaged". You can read and print it, and **Save as** keeps a copy, but nothing in it can be changed.
 
 **Saving**
 
 - **Save** (Ctrl+S) writes your changes. Pagezy writes a temporary copy, checks it, and only then replaces the file, so a failed save never damages it.
-- **Save as…** (Ctrl+Shift+S) saves a copy under a new name.
+- **Save as…** (Ctrl+Shift+S) saves a copy under a new name. To make a file for a website, pick **PDF, fast web view** under the file type (next to the file name): the first page then shows in a browser while the rest is still downloading.
 - The first time you save an edited file, Pagezy keeps the untouched original beside it as `name.orig.pdf`. You can turn this off in Settings › General. After you apply redactions, Pagezy never keeps that copy, because it would still hold what you removed.
-- **Signed files.** If a file has certificate signatures and your changes would make them invalid, **Save** asks first: **Save anyway**, or **Save a copy…** to keep the signed original as it is.
+- **Signed files.** On a file with certificate signatures, Pagezy adds your changes after the signed part instead of rewriting the file, so comments, filled-in form fields and further signatures leave the signatures valid, as long as the signer allowed such changes. If your changes would still make them invalid (for example you rotated, moved or deleted pages, applied redactions, or the signer only allowed form filling and you added a comment), **Save** asks first: **Save anyway**, or **Save a copy…** to keep the signed original as it is. Redactions always rewrite the whole file, so nothing you removed stays in an earlier part of it.
+- **Undo history.** Pagezy remembers up to 300 steps per file. Parts of the file a step didn't change are stored only once, so even a large scan keeps a long history.
 
 **Closing.** Close a tab with **×** or **Ctrl+W**; Pagezy asks before closing a file with unsaved changes. **Ctrl+Tab** and **Ctrl+Shift+Tab** move between tabs, and **Ctrl+3** to **Ctrl+9** jump to tabs 3 to 9. Quit with **Ctrl+Q**. The next time you start Pagezy, it reopens the files you had open.
+
+**More than one window.** Press **Ctrl+N** (or right-click the tabs › **New window**) to open another Pagezy window, for example to keep two files side by side on two screens.
+
+- To move a file to a window of its own, drag its tab down out of the tab row and let go, or right-click the tab › **Move to new window**.
+- To move it back, drag the tab onto the other Pagezy window, or right-click it › **Move to the window with "…"**. A window whose last tab leaves closes by itself.
+- A moved file keeps its unsaved changes, its undo history and its page.
+- A file is open in one window at a time: opening it again (from Home, Recent or the palette) brings up the window that already has it. Files you double-click in File Explorer open in the Pagezy window you used last.
+- Closing a window asks about its unsaved files, as usual. **Quit** (Ctrl+Q) closes every window and asks just once about all the unsaved files: **Save all**, **Don't save** or **Cancel**. Next time, Pagezy reopens the files from every window, together in one window.
+
+**Workspaces.** A workspace is a set of files you open together, such as the contract, its schedules and the letter about it. Pagezy remembers each file's page, zoom and layout, which tab was in front, and the mode you were in.
+
+- **Save one:** right-click the tabs › **Workspaces** › **Save tabs as a workspace…**, or type "workspace" in the command palette. Give it a name and click **Save workspace**. Saving under a name you already used asks before replacing it.
+- **Open one:** click it on Home, choose it under right-click the tabs › **Workspaces**, or use **Workspaces…** in the command palette. If the window has no files open, the workspace opens there; otherwise it opens in a new window.
+- **Rename or delete one:** right-click it on Home, or use **Manage workspaces…**. Deleting a workspace never deletes your files.
+- A workspace remembers where your files are, not their unsaved changes, so save your changes too. Files that were never saved can't be part of one. If a file has moved or been deleted since, the others still open and a note says which one is missing.
 
 **If Pagezy or your PC stops unexpectedly**, nothing is lost: while a file has unsaved changes, Pagezy keeps a recovery copy every 30 seconds. At the next start it asks **Restore unsaved work?** Choose **Restore** to get your changes back, or **Discard**. If you just close the question, the copies are kept and offered again next time. Files protected with a password get no recovery copy, so their content is never written to disk unprotected.
 
@@ -249,6 +269,7 @@ Each file reopens at the page, zoom and layout you left it at. You can also open
 3. **Marquee zoom**: drag a box to zoom into it, or click to zoom in at that spot.
 4. **Find** (Ctrl+F): search the text ([section 8](#8-find-text)).
 5. **Copy** (Ctrl+C): copy the selected text.
+6. **Reflow** (Ctrl+Shift+T): read the text flowing to fit the window ([Reflow text](#reflow-text)).
 
 **The page bar**
 
@@ -276,6 +297,10 @@ Each file reopens at the page, zoom and layout you left it at. You can also open
 
 **Back** and **Forward** remember jumps you made with links, bookmarks, thumbnails, search results and the page box, like a web browser.
 
+**Scrolling.** A mouse wheel glides the pages smoothly; a touchpad moves them exactly with your fingers. Zoomed in a long way (300% and more), Pagezy draws the part of the page you're looking at first and the rest as you scroll, so it stays quick. The pages just above and below are drawn ahead of time. After you change a page (a comment, an edit), only that page is drawn again; the others stay as they were.
+
+**A page that can't be drawn.** If part of a file is damaged, that page shows **This page couldn't be drawn** instead of staying blank. The rest of the file still works. Pagezy tries the page again after it changes, for example after you repair or replace it in Organize.
+
 **Links.** Click a link to follow it. Before opening a web link, Pagezy asks **Open link?** and shows the address. Links that would open a file or program on your PC are never followed.
 
 ### Page layouts
@@ -289,7 +314,23 @@ Choose how pages sit on screen:
 - **Two pages**: side by side, like an open book.
 - **Two pages, cover alone**: the first page on its own, then pairs, like a printed book.
 
+The menu ends with **Reflow text** ([below](#reflow-text)).
+
 Each file remembers its own zoom and layout. To change what new files open with, see Settings › **Page display** ([section 51](#51-settings)).
+
+### Reflow text
+
+**Reflow text** shows the document as flowing text, like a web page or an e-book: headings, paragraphs, lists, tables and pictures in reading order, with the words wrapping to fit the window. It's the easy way to read a PDF in a small window. Turn it on with **Reflow** in the Read tools, **Reflow text** at the end of the page layout menu, or **Ctrl+Shift+T**.
+
+1. **Pages** (or **Esc**, or **Ctrl+Shift+T** again) goes back to the pages, at the page you were reading.
+2. **−** and **+** make the text smaller or bigger. **Ctrl+-** and **Ctrl+=** do the same while you read.
+3. **Line width**: **Narrow**, **Medium** or **Wide** lines.
+4. **Night pages** (Ctrl+Shift+N): light text on a dark background.
+5. Which page you're on. A small **— Page 3 —** line marks where each page starts.
+
+Text in Urdu, Arabic or Hebrew reads from right to left. Long files are prepared a few pages at a time, so you can start reading straight away. Your text size and line width are remembered.
+
+Reflow works from the text in the file, so it suits reports, articles and books more than forms, posters or drawings. A scanned page has no text to reflow until you make it searchable ([section 35](#35-make-a-scan-searchable)). Reflow is for reading: to comment or edit, go back to the pages (switching to another mode does that for you).
 
 ## 8. Find text
 
@@ -299,13 +340,23 @@ Press **Ctrl+F** (or click **Find**). If you selected a word first, it is alread
 
 ![The find bar with matches on the page](images/read-find.png)
 
-1. Type what you're looking for. Pagezy searches as you type, starting from the current page, and highlights every match.
+1. Type what you're looking for. Pagezy searches as you type, starting from the current page, and highlights every match. A long file is searched in the background, so you can keep scrolling; the count ends in **+** until every page has been searched.
 2. **Aa** matches upper and lower case exactly, **W** finds whole words only, and **.\*** treats what you type as a regular expression (a search pattern).
 3. The count, for example "6 of 12".
 4. **Previous match** and **Next match**. **Enter** and **Shift+Enter** do the same, and so do **F3** and **Shift+F3** (even after the bar is closed).
 5. **All results** lists every match in the Search panel.
 
 Press **Esc** to close the bar.
+
+Pagezy finds words the way you read them:
+
+- A phrase that runs onto the next line is still found ("quick brown fox" with "brown" on a new line).
+- A word split with a hyphen at the end of a line is found whole ("example" for "exam-" + "ple"), and **well-known** finds "wellknown" and "well-known".
+- Joined letters such as ﬁ and ﬂ are found as ordinary letters ("office" finds "o**ﬃ**ce").
+- Curly and straight quotes match each other, and extra spaces don't matter.
+- Urdu, Arabic and Hebrew phrases are found in reading order.
+
+While you read reflowed text ([Reflow text](#reflow-text)), **Next match** shows each match in the flowing text.
 
 > Only real text can be found. If nothing is found on a scanned page, make it searchable first ([section 35](#35-make-a-scan-searchable)).
 
@@ -320,6 +371,8 @@ The Search panel lists every match with the words around it. Open it with the ma
 3. **Case**, **Whole word** and **Regex** work as in the find bar.
 4. How many results, on how many pages.
 5. The results. Click one to jump to it; **Alt+Left arrow** brings you back.
+
+Under **Also search**, tick **Comments**, **Bookmarks** and **Form fields** to find the words in comment notes, bookmark titles and what was typed into form fields too. Those results come first in the list, marked **Comment**, **Bookmark** or **Form field**; click one to go to it. A long file is searched in the background: the panel says how many pages it has searched so far, and results appear as they are found.
 
 To search many PDFs at once, use **Search in folder** ([section 47](#47-search-in-a-folder)).
 
@@ -406,7 +459,7 @@ To advance pages on a timer, set **Advance pages every** in Settings › **Prese
 2. The main pane. The toolbar and the page bar work on this one.
 3. The second pane shows your other open file (or the same file again if only one is open). It scrolls and zooms on its own.
 
-To make both panes scroll together, run **Scroll split views together** from the command palette. Click **Split view** again to close the second pane.
+To make both panes scroll together, run **Scroll split views together** from the command palette. **Night pages** applies to both panes. Right-click the second pane to copy selected text, zoom it on its own, or **Close split view**. Click **Split view** again to close the second pane.
 
 ## 12. Document properties and sharing
 
@@ -433,7 +486,7 @@ On the right, **At a glance** sums up the file: pages, size, security, signature
 1. **Email…** opens a new message in your mail app. On Windows, Pagezy puts the file on the clipboard and shows it in its folder, so you can paste it into the message.
 2. **Show** opens the file's folder.
 3. **Copy path** copies where the file is saved.
-4. **Smaller copy:** choose **WhatsApp (16 MB)**, **Email (25 MB)** or **Custom limit**, then **Make a smaller copy**. The copy is saved beside the original, which is never replaced. The two lines at the top say whether the file already fits. For scans and photos, **Compress** usually shrinks a file much more ([section 24](#24-make-files-smaller-and-clean-them-up)).
+4. **Smaller copy:** choose **WhatsApp (16 MB)**, **Email (25 MB)** or **Custom limit**, then **Make a smaller copy**. Pagezy first tries a copy whose pages look exactly the same. If that is still too big, it shrinks pictures, turns plain text scans into black and white, and keeps the text of colour scans sharp over a lighter background, until the copy fits. Searchable text stays searchable. The copy is saved beside the original, which is never replaced. The two lines at the top say whether the file already fits. To choose exactly how a file is made smaller, use **Compress** ([section 24](#24-make-files-smaller-and-clean-them-up)).
 5. **Copy file** puts the file itself on the clipboard. Paste it into WhatsApp Desktop, an email or a folder.
 
 **Show in folder** (Ctrl+Alt+R) opens the file's folder from anywhere.
@@ -446,7 +499,7 @@ On the right, **At a glance** sums up the file: pages, size, security, signature
 
 Comments are notes and marks on top of the page: highlights, sticky notes, drawings, stamps and measurements. They don't change the page itself, and other PDF apps such as Acrobat show them too. Switch to **Comment** in the mode rail (**Ctrl+Shift+C**).
 
-Your name goes on every comment you add. Set it in Settings › **Comments** › **Author name**; if it's empty, Pagezy uses your Windows user name.
+Your name goes on every comment you add. Set it in Settings › **Comments** › **Author name**; if it's empty, Pagezy uses your Windows user name. Spelling is checked as you type a comment or reply: right-click a word underlined in red for suggestions ([section 51](#51-settings)).
 
 ### The comment tools
 
@@ -492,7 +545,11 @@ The other tools:
 - **Shapes:** drag a box for a rectangle, oval or cloud (hold Shift for a square or circle), or drag from one end to the other for a line or arrow. For a polygon or polyline, click each corner, then press **Enter** or double-click to finish. **Backspace** removes the last point.
 - **Attach file as comment:** click the page and choose a file (up to 100 MB). To get the file back, double-click the paperclip. Pagezy never opens an attached program; it only saves a copy.
 
+**Urdu, Arabic, Hindi and other languages.** Type comments in any language. Text boxes, callouts, typewriter text and stamps show the letters joined, as they should be, in every PDF app, because Pagezy puts the letters' font in the file. Urdu is written in Nastaliq, Arabic in Naskh, and Hindi in Devanagari. Right-to-left text starts at the right of the box, and numbers and English words inside it read the right way round.
+
 **Change a comment.** With **Select**, click a comment to select it. Drag it to move it, drag a corner to resize it, and use the arrow keys to nudge it (Shift for bigger steps). Double-click it (or press Enter) to edit its text. **Delete** removes it.
+
+**Comments made in other apps**, such as Acrobat, keep their own look when you move or resize them. When you change their text, Pagezy updates it everywhere it is stored, so Acrobat shows your new words too.
 
 **Right-click a comment** (in any mode) for **Reply…**, **Set status** (Accepted, Rejected, Cancelled, Completed), **Mark with checkmark**, **Edit text…**, **Copy text**, **Lock**, **Properties…** and **Delete**. A locked comment can't be moved, resized or deleted until you unlock it.
 
@@ -560,9 +617,31 @@ The value shows in the bottom-left corner of the page area while you draw. **Exp
 - **Import comments (XFDF)…** brings in a reviewer's comments. Comments you already have are skipped, so importing twice is safe.
 - **Flatten comments into the page…** draws every comment into the page itself. They can no longer be edited, but Ctrl+Z brings them back until you save.
 
+### Send for review and merge comments
+
+When several people need to comment on a file, Pagezy prepares the copies and gathers the comments back. There is no server and nothing is sent for you: you pass the copies around with your own email or file sharing, and your reviewers can use any PDF app (Pagezy, Acrobat Reader, Edge, Chrome or Preview).
+
+**Send for review** (Home › Edit & review, or the command palette):
+
+1. Type each reviewer's **Name** (the email is optional, for your own list). **Add reviewer** and **Remove reviewer** change the list.
+2. Tick **Ask for comments by** to give a date.
+3. Change the **Instructions** if you like. Each copy opens with them in a note on the first page.
+4. **Saves the copies in** shows the folder (a new "… - review copies" folder beside your file); **Change…** picks another.
+5. Click **Create review copies**. You get one copy per reviewer, named after them, and a **How to review.txt** file that lists who gets which copy and what to do. **Show in folder** opens the folder so you can send them.
+
+The copies are made from the file as it is now, including changes you haven't saved. A password-protected file can't be sent for review, because the copies would have no password; remove it first if you need to.
+
+**Merge comments** (Home › Edit & review, or the command palette) brings the comments back into the open file. Choose the copies that came back; you can pick several at once, and a file of comments a reviewer exported from their app (XFDF) works too. Pagezy then shows:
+
+- **Who said what**: each reviewer, with every new comment, the page it's on and the words it marks. Comments that came back without a name get the name of the person the copy was for.
+- **Check these**: places that need your decision, in warning colour. Two people asked for different changes to the same words; two people changed one of your existing comments in different ways (Pagezy leaves it as it is); or someone changed the page itself rather than commenting on it (only comments are merged, so compare the files to see the change, [section 14](#14-compare-two-versions)).
+- Notes such as **Still waiting for:** the reviewers whose copy hasn't come back, or that the file has changed since the copies were made.
+
+Click the **Merge** button (it says how many comments, for example **Merge 12 comments**) to add them all as one step: Ctrl+Z takes them out again. Pagezy switches to **Comment** so you can go through them, reply and set their status. Comments already in your file are skipped, so merging the same copy twice is safe.
+
 ## 14. Compare two versions
 
-Compare shows every word that was added, removed or changed between two versions of a document, side by side. Switch to **Compare** in the mode rail, or press **Ctrl+Alt+C**.
+Compare shows every word that was added, removed, changed or moved between two versions of a document, side by side. It also finds changes to formatting (font, size, bold, italic and colour), comments, pictures and pages. Switch to **Compare** in the mode rail, or press **Ctrl+Alt+C**.
 
 ![Choosing the old and new files to compare, with page ranges and what to ignore](images/compare-files.png)
 
@@ -570,21 +649,28 @@ Compare shows every word that was added, removed or changed between two versions
 2. **New**: the later version.
 3. Which pages to compare: **all**, or a range such as `1-5, 8`.
 4. **Swap old and new**.
-5. What to ignore: **Headers, footers and page numbers** (on by default), **Upper and lower case**, **Punctuation and smart quotes**, and **Compare text only (skip images)**.
+5. What to ignore: **Headers, footers and page numbers** (on by default), **Upper and lower case**, **Punctuation and smart quotes**, **Formatting (font, size, bold, italic, colour)**, and **Compare text only (skip images)**.
 6. An optional pattern: text that matches it is ignored, for example reference numbers.
 
-Click **Compare**. A few seconds later:
+Click **Compare**. While it works, the panel on the right shows how far it has got, and **Stop comparing** cancels it. Long files are quick too: two 200-page versions take a few seconds, and comparing the same files again is almost instant.
 
 ![A comparison side by side, with changed numbers marked and the list of 22 changes](images/compare-result.png)
 
-1. The colour key: **Removed** (red), **Added** (green), **Moved** (blue) and **Image or layout** (amber).
-2. The old version, on the left.
-3. The new version, on the right. Changed words are marked on both sides, and the current change is outlined.
+1. The colour key: **Removed** (red), **Added** (green), **Moved** (blue), **Formatting** (purple) and **Image or comment** (amber). On a narrow window the key is hidden to make room.
+2. The old version, on the left, with the page it shows (for example *page 8 of 30*).
+3. The new version, on the right, with its page. Changed words are marked on both sides, and the current change is outlined.
 4. **Previous** and **Next** change (**Shift+F7** and **F7**).
 5. **Sync scroll** keeps both sides on the same place, even when pages were added or removed.
-6. **Show**: turn whole kinds of change on or off.
+6. **Show**: turn whole kinds of change on or off. The number after each kind says how many there are:
+   - **Text added, removed or replaced**.
+   - **Moved text**: a paragraph that now sits somewhere else.
+   - **Formatting (font, size, bold, colour)**: the same words in a different font, size, weight, slant or colour. The list says what changed, for example *bold* or *size 10 → 12 pt*.
+   - **Comments**: notes and markups that were added, removed or changed (their text, author, colour, status, replies or place).
+   - **Images**: pictures added, removed, replaced by a different one, or moved or resized.
+   - **Pages added, removed or moved**: a page that moved shows as *old page 3 is now page 6*.
+   - **Headers, footers and page numbers** (off by default).
 7. **Search changes** for a word.
-8. Every change, with its pages. Click one to jump there.
+8. Every change, with its pages. Click one to jump there. Point at one to see the old and new text.
 
 **Overlay** compares the two pages pixel by pixel, which suits drawings, maps and scans:
 
@@ -607,7 +693,7 @@ Click **Compare**. A few seconds later:
 5. **Include changes hidden by filters**.
 6. Where it's saved; **Change…** to choose.
 
-The report lists both files' SHA-256 fingerprints, which prove exactly which versions were compared. **End comparison** closes the comparison.
+Every kind of change goes into the report, with a column that says what changed (for example *bold*, *text changed* or *reply added*). The report lists both files' SHA-256 fingerprints, which prove exactly which versions were compared. **End comparison** closes the comparison.
 
 ---
 
@@ -652,6 +738,8 @@ The look you choose applies to the whole block.
 - **Cover & replace:** for the rare text that can't be removed safely, Pagezy hides the old text under a box in the paper's colour and draws yours on top. The old text is still in the file; to remove it for good, redact it ([section 32](#32-redact)). You can turn this off in Settings › **Editing**.
 
 After you save an edit, the panel says which of the three was used.
+
+**Urdu, Arabic and Hindi.** You can type these into any block, or change a block that's already in them. Pagezy writes the whole block again with its letters joined: Urdu in Nastaliq, Arabic in Naskh and Hindi in Devanagari, using fonts built into Pagezy, so you don't need to install anything. If you pick a font on your PC that is made for the language (for example Jameel Noori Nastaleeq), Pagezy uses it instead. Right-to-left paragraphs start at the right, and lines wrap between words. The text can still be searched and copied afterwards.
 
 ### Add text
 
@@ -732,6 +820,8 @@ Click **Page marks** in Edit. Every mark Pagezy adds is tagged, so it can be cha
 
 You can also set the font, size, colour, width and position. **Background** puts a colour or a picture behind everything on the page.
 
+Headers, footers and watermarks can be in Urdu, Arabic, Hindi or any other language. Pagezy joins the letters and puts the font in the file, so the mark looks the same everywhere and can be searched.
+
 ![Page marks, Bates numbering tab: prefix ABC-, six digits, footer right](images/edit-bates.png)
 
 1. **Prefix** (and **Suffix**), for example `ABC-`.
@@ -773,7 +863,7 @@ Pagezy reads the text (if it hasn't been read yet), straightens slightly crooked
 
 You can also right-click a scanned page and choose **Make this page's text editable**.
 
-The matched fonts are standard faces, so the text looks close to the original but not identical.
+The matched fonts are standard faces, so the text looks close to the original but not identical. Urdu, Arabic and Hindi lines (read with Tesseract, [section 35](#35-make-a-scan-searchable)) come back as joined text in Nastaliq, Naskh or Devanagari, sized to fit the line on the scan.
 
 ---
 
@@ -915,20 +1005,28 @@ After **Apply labels**, the labels show under the thumbnails and in the page box
 
 ## 24. Make files smaller and clean them up
 
-**Compress** makes a file smaller, mainly by shrinking pictures.
+**Compress** makes a file smaller, mainly by shrinking pictures and scanned pages.
 
-![Compress: the Email, Balanced and Print presets, a size target and extra clean-up options](images/organize-compress.png)
+![Compress: the Lossless, Email, Balanced and Print presets, a size target and extra clean-up options](images/organize-compress.png)
 
 1. Choose a preset. Each shows the size you'll get:
+   - **Lossless**: pages stay exactly the same. Pagezy only packs pictures and the file more tightly.
    - **Email / WhatsApp**: smallest, pictures at 150 ppi.
    - **Balanced**: for the screen and office printing, 200 ppi.
    - **Print**: keeps 300 ppi for printing.
+
+   When the file has scanned pages, **Scanned pages** appears under the presets, with a line saying what Pagezy found. Pagezy picks the best choice for you:
+   - **Keep them as pictures**: scans are shrunk like any other picture.
+   - **Black and white, where they are only ink on paper**: plain text scans become crisp black and white, often a tenth of the size or less. Scans with colour or photos stay as they are.
+   - **Sharp text over a lighter background (also colour scans)**: the text, stamps and signatures stay sharp and keep their colours, while the paper and any photos are stored at a lower resolution. Colour scans often shrink to a tenth of their size.
+
+   Text you made searchable with **Recognize text** stays searchable whatever you choose.
 2. **Make it smaller than** a size you set: Pagezy lowers picture quality step by step until the file fits, and stops before text gets hard to read.
 3. **Also**: remove embedded page thumbnails, metadata (author, producer) and JavaScript actions.
-4. **Save as**: a **New file** (`name-small.pdf`), or apply it to the open tab and save later.
+4. **Save as**: a **New file** (`name-small.pdf`), or apply it to the open tab and save later. For a new file, tick **Fast web view** so its first page shows while the rest is still downloading from a website.
 5. **Audit space usage** shows what takes up the space: pictures, fonts, page content, comments and so on, with the biggest objects.
 
-After compressing, a report shows the size before and after, what was done, and checks that the pages, text, bookmarks, links and form fields all survived. Text and drawings stay sharp.
+After compressing, a report shows the size before and after, what was done, and checks that the pages, text, bookmarks, links and form fields all survived and that the pages still look right. Text and drawings stay sharp.
 
 **Clean up** › **Remove blank pages…** finds empty pages and pages that went through the scanner twice:
 
@@ -973,11 +1071,13 @@ When you open a PDF with fillable fields, Pagezy switches to **Forms** › **Fil
 | Next / previous field with a problem | F8 / Shift+F8 |
 | Open a calendar in a date field | Alt+Down arrow |
 
+**Any language.** Answers in Urdu, Arabic, Hindi and other languages are drawn with joined letters and the font is put in the file, so the filled form looks right in every PDF app and when printed. Right-to-left answers start at the right of the field.
+
 **Totals and formats work for you.** Pagezy formats numbers, dates and phone numbers as the form expects, and adds up totals as you type. It never runs scripts from the PDF: it does the standard form calculations itself, safely.
 
 **Mistakes are marked, not blocked.** A value that doesn't fit (for example a date that doesn't exist) is kept but marked red, with a message such as "Enter a date like dd/mm/yyyy" in the bottom-left corner of the page area.
 
-**Signed forms.** If the form is already signed, Pagezy warns you before your first change: filling it changes the file, so the existing signatures will show as changed. Use **Save as** if you need to keep the signed original.
+**Signed forms.** If the form is already signed, what you fill in is saved after the signed part, so the signatures stay valid when the signer allowed form filling. If a change wouldn't be allowed, **Save** asks first.
 
 **XFA forms.** Some forms are built with Adobe's XFA technology. Pagezy fills the simpler (static) kind normally. The dynamic kind only shows its placeholder pages in Pagezy, but you can still import and export its data.
 
@@ -1067,7 +1167,11 @@ Then click **Autofill** on any form. Pagezy reads the labels on the page, in Eng
 
 ## 29. Certificate signatures and digital IDs
 
-A **certificate signature** proves who signed a PDF and that nothing changed after signing. It needs a **digital ID**: a file with your name and a secret key, protected by a password.
+A **certificate signature** proves who signed a PDF and that nothing changed after signing. It needs a **digital ID**: your name and a secret key. Pagezy can use three kinds:
+
+- **A digital ID file** (.pfx or .p12) protected by a password. Pagezy can make one for you.
+- **A certificate in Windows**: one your company or a certificate authority installed on your PC, including smart cards Windows already knows. Windows keeps the key and asks for the PIN itself when it needs one. (Windows only.)
+- **A USB token or smart card**, through the PKCS#11 library that came with it. Pagezy asks for the token's PIN each time and never saves it.
 
 ### Your digital ID
 
@@ -1075,13 +1179,17 @@ Open **Digital IDs** (Sign › **Digital IDs**, or Home › Forms & sign). It wo
 
 ![Digital IDs: a self-signed ID and its details](images/sign-ids.png)
 
-1. **My IDs** and **Trusted certificates**.
+1. The pages: **My IDs**, **Windows certificates** (Windows only), **USB tokens**, **Trusted certificates** and **Trust lists**.
 2. Your IDs. The star marks your default one.
 3. The selected ID's details: name, key, valid dates and fingerprint.
-4. **Import .pfx / .p12…** brings in an ID you already have. **Export certificate…** saves the public part of your ID, which you can give to people so their PDF apps trust your signature. **Make default** and **Remove** are next to it.
-5. **Create ID…** makes a new self-signed ID: type your name (and optionally organisation, email and country), choose how many years it lasts, and set a password of at least 8 characters. There is no way to recover a forgotten password.
+4. **Import .pfx / .p12…** brings in an ID you already have. **Export certificate…** saves the public part of your ID, which you can give to people so their PDF apps trust your signature (and so they can encrypt files for you). **Make default** and **Remove** are next to it.
+5. **Create ID…** makes a new self-signed ID: type your name (and optionally organisation, email and country), choose how many years it lasts, choose **Use for** (**Signing**, or **Signing and encryption** if people should be able to encrypt files for you), and set a password of at least 8 characters. There is no way to recover a forgotten password.
 
-Under **Trusted certificates**, **Import certificates…** adds the certificates of people and organisations whose signatures you check. Your own IDs are always trusted.
+**Windows certificates** lists the personal certificates in Windows that have a private key. Pagezy only reads this list; it never changes anything in Windows. **Make default** picks one for signing, and **Export certificate…** saves its public part.
+
+**USB tokens**: plug in the token, click **Add from token…**, choose the token's PKCS#11 library (a .dll file from the token's software, for example in `C:\Windows\System32`) and click **Find certificates**. Pick the certificate and click **Add certificate**. If the token only shows its certificates after the PIN, Pagezy asks for it for that one read. Pagezy remembers where the library is and which certificate to use, never the PIN.
+
+Under **Trusted certificates**, **Import certificates…** adds the certificates of people and organisations whose signatures you check. Your own IDs are always trusted. **Trust lists** is described under [Which signatures are trusted](#which-signatures-are-trusted).
 
 ### Sign
 
@@ -1089,14 +1197,18 @@ Click **Certificate sign** (Ctrl+Shift+G). Then drag a box where the signature s
 
 ![Signing with a digital ID: ID, password, type, reason, appearance and timestamp server](images/sign-certificate.png)
 
-1. **Digital ID**.
-2. **Password** of the ID.
+1. **Digital ID**: your ID files, Windows certificates you used before, your USB tokens, and **Choose a certificate from Windows…** to pick another one from Windows.
+2. **Password** of an ID file, or the **PIN** of a USB token. A Windows certificate needs neither here: Windows asks for the PIN itself if it needs one.
 3. **Type**: **Approve (others can still sign)**, or **Certify (first signature, sets what may change)**. A certification sets **Allowed changes**: none, filling forms and signing, or that plus comments. **Lock the document after signing** stops further changes.
 4. **Reason**, **Location** and **Contact**.
 5. **Show**: what the visible signature says (name, date, reason, location, labels).
 6. **Graphic**: none, your saved signature, or a picture or logo.
-7. **Timestamp server** (optional). Leave it empty to stay offline; it is the only thing signing ever contacts.
+7. **Timestamp server** (optional) and **Add long-term validation**. Leave both off to stay offline.
 8. **Sign and save copy** (Ctrl+Enter). The signed file is saved beside the original as `name-signed.pdf` and opens in a new tab.
+
+**Long-term validation** stores your certificate's revocation status (whether it was cancelled) inside the file, so the signature can still be checked years later, after your certificate has expired. With a timestamp server it also seals the file with a final timestamp. To get that status Pagezy has to ask the servers named in your certificate, so before anything is sent it shows you their names and waits for **Go online and sign**. Only certificate status and timestamps are requested, never your document, and every request appears in **Settings › Privacy & network**. A self-signed ID has nothing to look up, so it stays offline.
+
+**Encrypted files** can be signed too. The signature is added inside the encryption, and the signed copy keeps the same password or the same people who can open it ([section 31](#31-passwords-and-permissions)). If you want a file both encrypted and signed, encrypt it first and then sign: encrypting a signed file writes a new file, and its signatures stop validating.
 
 ### Check signatures
 
@@ -1104,18 +1216,27 @@ Pagezy checks signatures when you open a signed file, all on your PC. You can ch
 
 ![A signed agreement with a green 'Valid, not changed since signing' bar and the Signatures panel](images/sign-validate.png)
 
-1. The result bar: green for **Valid, not changed since signing**, amber when the document is intact but the signer isn't in your trusted list yet, and red when the document changed after signing. **Signature details** opens the full report.
-2. The **Signatures** panel lists each signature with its state. Double-click one for details: who signed, when, why, which certificate, and every check. **Open signed version** opens the file exactly as it was signed. **Trust this certificate…** adds the signer to your trusted list (check its fingerprint with the signer first).
+1. The result bar: green for **Valid, not changed since signing**, amber when the document is intact but you don't trust the signer yet, and red when the document changed after signing. **Signature details** opens the full report.
+2. The **Signatures** panel lists each signature with its state, and for a trusted one, what made it trusted. Double-click one for details: who signed, when, why, which certificate, **Trusted through**, **Long-term validation**, and every check. **Open signed version** opens the file exactly as it was signed. **Trust this certificate…** adds the signer to your trusted certificates (check its fingerprint with the signer first).
 3. **Validate all**.
 
 | State | Means |
 |---|---|
-| **Valid** (green) | Not changed since signing, and you trust the signer. |
-| **Valid, identity unknown** (amber) | Not changed, but the signer's certificate isn't in your trusted list. |
+| **Valid** (green) | Not changed since signing, and the signer's certificate leads to one you trust. |
+| **Valid, identity unknown** (amber) | Not changed, but none of your trust sources vouches for the signer. |
 | **Invalid** (red) | Changed after signing in a way that wasn't allowed. |
-| **Unknown** (grey) | Couldn't be fully checked. |
+| **Unknown** (grey) | Couldn't be fully checked, for example an encrypted file opened without its password. |
 
-Revocation (whether a certificate was cancelled) isn't checked, because that would need the internet.
+Pagezy never goes online to check revocation. When a signature has long-term validation, Pagezy checks it with the information stored in the file and says **Not revoked when it was signed**.
+
+### Which signatures are trusted
+
+A signature shows as **Valid** only when its certificate leads to one you trust. Signature details always say which source it was:
+
+- **your trusted certificates**: the ones you imported or trusted from a signature;
+- **your own digital ID**;
+- **Windows trusted roots**: the certificate authorities Windows trusts (the same ones your browser uses for websites). This is off until you turn on **Trust certificates Windows trusts** in **Settings › Forms & signatures**. Windows fetches some of these only when it first needs one, so a rarely used authority may be missing;
+- **a trust list** you imported: in **Digital IDs › Trust lists**, click **Import trust list…** and choose a list you downloaded yourself, such as an EU trusted list (.xml) or a certificate bundle (.pem, .p7b, .p7c, .cer) that a certificate authority or your company publishes. From an EU trusted list Pagezy takes only the certificate authorities whose service is current. Pagezy never downloads lists by itself. **Remove** takes a list away again.
 
 ## 30. Ask others to sign
 
@@ -1140,7 +1261,7 @@ Switch to **Protect** in the mode rail.
 
 ![Protect mode: the tools, the security status and six redaction marks on an agreement](images/protect-tools.png)
 
-1. **Password**, **Policies** and **Remove security** ([section 31](#31-passwords-and-permissions)).
+1. **Password**, **People** (encrypt for people), **Policies** and **Remove security** ([section 31](#31-passwords-and-permissions)).
 2. **Mark text** (R), **Mark area**, **Redact pages** and **Find & redact** (**Ctrl+Shift+R**) ([section 32](#32-redact)).
 3. **Apply** the redactions.
 4. **Sanitize**, **Label** and **Active content** ([sections 33](#33-remove-hidden-information) and [34](#34-scripts-risky-actions-and-classification-labels)).
@@ -1170,6 +1291,18 @@ Click **Password** (or Home › **Protect with password**).
 **Save as policy…** saves these settings (never the passwords) under a name. Next time, pick it from **Policies** and just type the passwords.
 
 **Remove security** takes the password and restrictions off a file you can open. If the author set a permissions password, Pagezy asks for it. Save to write the file without protection.
+
+### Encrypt for people
+
+Instead of a password you have to share, you can encrypt a file so that only certain people can open it, each with their own digital ID. Click **People** (or Home › **Encrypt for people**).
+
+1. **People who can open it**: click **Add certificate…** and choose each person's public certificate (.cer, .pem or .p7c; ask them to export it from their PDF app or from Pagezy's Digital IDs). **Add my ID** adds one of your own IDs, so you can open the copy too. **Remove** takes someone off.
+2. **They may**: **Print**, **Copy text and images**, and **Change, fill in and comment**.
+3. **Encrypt and save copy** (Ctrl+Enter) saves `name-encrypted.pdf` beside the original. The original isn't changed.
+
+A certificate made only for signing can't be used to encrypt; Pagezy says so next to it. IDs you create with **Use for: Signing and encryption** work for both.
+
+**Opening a file encrypted for you.** Open it as usual. Pagezy asks which digital ID to use (the ones that can open it are marked **can open this file**) and the ID's password; for a Windows certificate, Windows asks for the PIN if needed. The file opens in a tab and stays encrypted: Pagezy never writes the opened content to disk, and **Save** encrypts it again for the same people. If Pagezy doesn't have everyone's certificate, a bar says so; add them in **People** before you save, or they lose access.
 
 ## 32. Redact
 
@@ -1258,25 +1391,26 @@ You can also use Home › **OCR scans**, **Recognize text** in the **Scan & OCR*
 ![The Recognize text dialog: engine, languages, pages and options](images/scan-ocr.png)
 
 1. **Engine**:
-   - **Neural · RapidOCR** is built in. It is best on phone photos, faxes and poor scans, and reads English, other Latin-script languages and Chinese.
-   - **Tesseract 5** reads more than 100 languages, including Urdu, Arabic and Hindi, and is very exact on clean print. It needs Tesseract installed (free); then choose your languages.
-2. **Languages**. For Tesseract, tick the languages on the pages, most common first. **Manage language packs…** downloads more.
+   - **Neural · RapidOCR** is built in. It is best on phone photos, faxes and poor scans. It reads English, other Latin-script languages, Chinese and Japanese, and with a free script pack also Urdu, Arabic, Persian, Pashto, Hindi, Marathi, Nepali, Russian, Ukrainian and more.
+   - **Tesseract 5** reads more than 100 languages and is very exact on clean print. It needs Tesseract installed (free); then choose your languages.
+2. **Languages**. For the built-in engine, pick the **Script** the pages are written in; a script appears here once its pack is downloaded. For Tesseract, tick the languages on the pages, most common first. **Manage language packs…** downloads more.
 3. **Pages**: **All pages**, **Current page** or a **Range**.
 4. **Pages that already have text**: **Skip them**, or **Replace old OCR text** to read them again.
 5. **Options**: **Straighten and auto-rotate pages** (for reading; the scan itself isn't changed), **Clean the background first** for faint or yellowed scans, and **Flag words below 80 %** confidence for you to check.
 6. **Recognize 1 page**.
 
-Recognition runs in the background; you can keep working. The page looks exactly the same afterwards: the words are added as invisible text behind the picture. The whole run is one step you can undo. Save to keep it.
+Recognition runs in the background; you can keep working. Pagezy reads several pages at once, so long scans finish sooner, and a page scanned sideways or upside down is turned the right way up first. The page looks exactly the same afterwards: the words are added as invisible text behind the picture. Urdu, Arabic and Persian come out in the order you read them, so search and copy work as expected. The whole run is one step you can undo. Save to keep it.
 
 > To change the words on a scan, not just search them, use Edit ([section 19](#19-edit-the-words-on-a-scanned-page)).
 
-**Language packs** for Tesseract:
+**Language packs**:
 
-![Tesseract language packs: English, Urdu, Arabic, Hindi and more](images/scan-languages.png)
+![Language packs: script packs for the built-in engine, and Tesseract languages](images/scan-languages.png)
 
-1. **Filter languages**.
-2. The languages, with their size and whether they're installed. Click **Download**; Pagezy shows exactly what it will download and from where before it starts. **Remove** deletes one.
-3. Where the packs are kept.
+1. **Filter languages**: type a language, such as Urdu, to find the pack that reads it.
+2. **Built-in engine** script packs: Arabic script (Urdu, Arabic, Persian, Pashto, Sindhi), Devanagari (Hindi, Marathi, Nepali), Cyrillic (Russian, Ukrainian, Bulgarian and more) and an extra Latin pack for accented languages. Each shows what it reads, its size (about 8 MB) and its licence. Click **Download**; Pagezy shows exactly what it will download and from where before it starts, and checks the file before using it. **Remove** deletes one.
+3. **Tesseract** languages, with their size and whether they're installed. **Download** and **Remove** work the same way.
+4. Where the Tesseract packs are kept.
 
 Language packs are the only thing these tools ever download, and only when you ask.
 
@@ -1368,7 +1502,7 @@ JPEG photos go in untouched, without losing quality. Camera details and GPS loca
 2. **Extract table**.
 3. **Create PDF**.
 4. **Print**.
-5. **PDF/A**: save an archive copy.
+5. **PDF/A**: save an archive copy, a print-ready PDF/X copy or an e-invoice.
 6. **Preflight**: check before printing.
 7. **Accessibility check**.
 
@@ -1376,21 +1510,22 @@ JPEG photos go in untouched, without losing quality. Camera details and GPS loca
 
 Choose a format from **Export**, press **Ctrl+E**, or use Home › **PDF to Word**, **PDF to Excel** or **Export images**.
 
-![Export to Word, with the accuracy check for each page](images/convert-export.png)
+![The export window: a PDF page beside a preview of the Word file, the six formats and what Pagezy found](images/convert-export.png)
 
-1. The format:
-   - **Word (.docx)**: paragraphs that reflow, with headings, lists, tables and images.
-   - **Excel (.xlsx)**: each table becomes a sheet, and numbers stay numbers.
-   - **PowerPoint (.pptx)**: one slide per page, with editable text boxes.
-   - **PNG**, **JPEG** and **TIFF** images, at the resolution you choose.
-   - **Web page (.html)**, **Plain text (.txt)**, **Markdown (.md)** and **JSON (.json)**.
-2. The options for that format. For Word: **Images**, **Tables as Word tables** and **Keep PDF page breaks**. For Excel: one sheet per table, per page, or for the whole document, and **Detect numbers**. For images: resolution, colour and JPEG quality.
-3. **Pages**: all, the current page, or a range.
-4. **Open the file when done**.
-5. **Pagezy found**: how many pages have text, how many are laid out in columns, and how many tables and headings it found. Columns, tables, lists, headers and footers are kept in the result. Scanned pages have no text to export, so recognize them first ([section 35](#35-make-a-scan-searchable)).
-6. **Export 10 pages**. Choose where to save; a green bar then offers **Open** and **Show in folder**.
+1. **Preview**: the page as it is in the PDF, next to a drawing of what the export makes of it, with its real words, headings, lists, tables and pictures. The arrows move to the other pages; **Side by side** or **Word only** changes the view.
+2. The format: **Word**, **Excel**, **PowerPoint**, **Web page**, **Text** and **Images**. Under Text, choose **Plain text**, **Markdown** or **JSON**; under Images, **PNG**, **JPEG** or **TIFF**.
+3. **Layout**, for Word, PowerPoint and web pages:
+   - **Easy to edit**: paragraphs that reflow, with real headings, lists and tables. Best for changing the words. In PowerPoint, plain slides where the text, tables and pictures are separate objects.
+   - **Looks the same**: every line and picture stays where it was on the page. Best for printing or forms. In PowerPoint, the page becomes the slide background with editable text on top.
+4. **Pagezy found**: columns, tables, headings, a running header and footer (and where it goes, for example into the Word header) and scanned pages. A scanned page has no text of its own: leave **Recognize text on scanned pages** ticked and Pagezy reads its words while it exports, so a scanned table becomes a real Excel table. Without it, recognize the pages first ([section 35](#35-make-a-scan-searchable)).
+5. **Pages**: all, the current page, or **Choose pages…** (for example `1-3, 7`).
+6. **Smart layout** finds tables, titles, pictures, headers and footers more reliably, including tables without lines and tables whose cells wrap onto several lines. It needs two layout models, a one-time download of about 131 MB that only happens when you click **Download…**; Pagezy checks every file before it uses it, and nothing from your documents is sent. It adds about a second per page.
+7. **More options** for the chosen format. For Word: **Pictures and drawings**, **Tables as Word tables** and **Keep PDF page breaks**. For Excel: one sheet per table, per page, or for the whole document, and **Detect numbers**. For images: resolution, colour, JPEG quality and **All pages in one TIFF file**.
+8. **Open when done**, then **Export to Word** (the button names the format). Choose where to save; a green bar then offers **Open** and **Show in folder**.
 
-**Batch export…** converts many PDFs to the same format in one go. The files you add are never changed, and existing files are never overwritten.
+In every format, columns are read in order, a hyphen at the end of a line is removed when it splits one word (and kept in words such as "well-known"), lists keep their indents, and charts and diagrams drawn in the PDF come out as pictures.
+
+**Batch export…** converts many PDFs to the same format, and the same layout, in one go. The files you add are never changed, and existing files are never overwritten.
 
 ## 41. Pull a table out of a PDF
 
@@ -1416,10 +1551,18 @@ Click **Create PDF** (or Home › **Create PDF**):
    - **Blank pages**: plain, ruled, grid or dot paper, in A3, A4, A5, Letter or Legal.
    - **From the clipboard** (Ctrl+Alt+V): a copied picture or text becomes a page.
    - **Screenshot**: the whole screen, or an area you drag. Pagezy hides itself while it captures.
-   - **From a file**: saved web pages and text files are converted on your PC. Word, Excel and PowerPoint files need **LibreOffice** (free). If it isn't found, Pagezy explains how to install it, or lets you point to it.
+   - **From a file**: saved web pages (.html), Markdown (.md) and text files are converted on your PC. Word, Excel and PowerPoint files are converted by an office program on your PC (see below).
 2. **Continue**.
 
 Every new PDF opens in a tab; save it to keep it.
+
+**Word, Excel and PowerPoint files.** Before converting, Pagezy shows which program will make the PDF under **Made by**, with a line on what to expect. When there's a choice, pick another one from the list; Pagezy remembers it for next time. Then click **Create PDF**.
+
+- **Microsoft Word**, **Excel** or **PowerPoint**, if Microsoft Office is installed: the pages look exactly as they do in Office. Office stays hidden the whole time, opens a copy of your file without running its macros, and closes again when it's done; Office windows you already have open are left alone.
+- **LibreOffice** (free), if it's installed: the pages usually look the same, though complex layouts can shift a little.
+- **Simple layout (built in)**, for Word files (.docx) when neither is installed: keeps the text, headings, lists, tables and pictures, but not the page design (fonts, columns, headers and footers).
+
+If no program can open the file (an Excel or PowerPoint file without Office or LibreOffice), Pagezy explains how to install LibreOffice, or lets you point to it if it's installed somewhere unusual. The conversion runs in the background (cancel it from **Background tasks**, the clock button at the top); one that takes more than two minutes is stopped.
 
 ## 43. Print
 
@@ -1443,6 +1586,19 @@ Press **Ctrl+P** (or click **Print**).
 
 Under **Output** you can also print without comments, in grayscale, as an image, and on both sides.
 
+On Windows, Pagezy sends each page to the printer as real text and lines, so small print stays sharp at whatever resolution your printer has, and big jobs stay small. **Print as image** sends pictures of the pages instead; try it if a printer gets a page wrong. On a Mac or Linux, and with **Save as PDF (Pagezy)**, pages are always sent as pictures, at your printer's resolution up to 600 dpi.
+
+Comments that their author marked as not for printing never print, just as in other PDF readers. Untick **Print comments and form fields** to leave out every comment and form field.
+
+**Output preview…** shows how a page splits into the four printing inks:
+
+- Untick **Cyan**, **Magenta**, **Yellow** or **Black** to see what the other inks print on their own.
+- **Ink coverage on this page**: the average and highest amount of each ink, and the highest total. Tick **Highlight total ink above** to colour the areas that use more ink than your print shop allows (often 300%).
+- **Colours converted with**: the file's own press profile when it has one, a simple estimate, or a CMYK profile installed on your PC.
+- **Overprint**: pages where objects print on top of the colours beneath instead of replacing them. White objects set to overprint are marked in red, because they disappear on a printing press.
+
+The output preview is an estimate made from screen colours. For a job that has to be exact, ask the print shop for a proof.
+
 ![Printing a booklet, with a preview of each side of the sheet](images/convert-booklet.png)
 
 1. **Sides**: both sides, or front and back separately for a printer that can't print double-sided.
@@ -1457,39 +1613,87 @@ Printing runs in the background and never changes the document.
 
 ![Preflight results for digital printing: errors, warnings and information](images/convert-preflight.png)
 
-1. **Profile**: **Digital printing**, **Web and email** or **PDF/A-2b**.
+1. **Profile**: **Digital printing**, **PDF/X-4 press** (for offset printing), **Web and email** or **PDF/A** (the PDF/A part the file claims, or PDF/A-2b).
 2. **Analyse** runs the check again. **Save report…** saves the results.
 3. The count of errors, warnings and information.
-4. The findings, such as fonts that aren't embedded, pictures below 150 ppi, RGB colour, transparency, mixed page sizes and heavy ink. Click one to see where it is.
+4. The findings, such as fonts that aren't embedded, pictures below 150 ppi (300 ppi for PDF/X-4 press), RGB colour, transparency, white objects set to overprint, mixed page sizes and heavy ink. Click one to see where it is.
 
 Preflight only reports; it doesn't change the file.
 
-**PDF/A** is a standard for keeping documents readable for decades.
+### Save as PDF/A, PDF/X or an e-invoice
 
-![Save as PDF/A-2b: what will change to make an archive copy](images/convert-pdfa.png)
+Click **PDF/A** (or Home › **PDF/A**) to save a copy that follows a standard.
 
-1. **PDF/A-2b · archiving**.
-2. What standard the file already claims.
+![Save as a standard: what will change to make an archive copy](images/convert-pdfa.png)
+
+1. **Standard**: the kind of copy you want:
+   - **PDF/A-2b · archiving**: keeps the document looking the same for decades. Fonts are embedded, colours are defined and scripts are removed. Choose this when you aren't sure.
+   - **PDF/A-2u · archiving, searchable**: like PDF/A-2b, and every letter can be searched and copied.
+   - **PDF/A-1b · oldest archive format**: only for archives that ask for PDF/A-1. It can't hold transparency, layers or attached files.
+   - **PDF/A-3b · archiving with attachments**: like PDF/A-2b, and keeps attached files. Click **Add files…** to attach more, such as the spreadsheet behind a report, and say how each one relates to the document (its source, its data, the same content in another format, or extra material).
+   - **PDF/X-4 · print**: a file a print shop can print without surprises. Choose the **Press profile** the print shop uses, such as Coated FOGRA39; Pagezy lists the profiles installed on your PC, or click **Choose a profile file…** for the one the print shop sent you. Pagezy embeds fonts, sets the trim box, marks RGB colour so the print shop can convert it, and merges comments into the page. Transparency is allowed.
+   - **Factur-X / ZUGFeRD · e-invoice**: an invoice people can read and accounting software can import. Click **Choose invoice XML…** and pick the XML file your accounting software made (the CII format, also used for XRechnung). Pagezy attaches it to a PDF/A-3 copy of the invoice and labels its profile, such as EN 16931.
+2. What standard the file already claims, including an attached e-invoice.
 3. **What will change** to make the copy compliant, for example embedding fonts, removing JavaScript and adding colour information. A cross marks anything that can't be fixed automatically.
-4. **Validate this file** checks it without changing it.
-5. **Save PDF/A copy…** writes an archive copy beside the original and checks it. If **veraPDF** is installed, Pagezy also asks it for the official verdict.
+4. **Validate this file** checks the open file against the chosen standard without changing it.
+5. **Save PDF/A copy…** (or **Save PDF/X copy…**, **Save e-invoice…**) writes the copy beside the original and checks it. If **veraPDF** is installed, Pagezy also asks it for the official PDF/A verdict.
+
+Pagezy's checks cover the common rules of each standard, not every clause. It checks that an invoice XML is a CII invoice and reads its profile, but not the amounts or the other invoice rules; your accounting software is responsible for those.
+
+**Received an e-invoice?** When a PDF carries invoice data, the PDF/A dialog shows **Show invoice data…**, and you can also run **Show e-invoice data…** from the command palette (Ctrl+K). It lists the invoice number, date, seller, buyer, tax and total, shows the XML itself, and **Save XML…** saves it for your accounting software.
 
 ## 45. Accessibility
 
-**Accessibility check** (Ctrl+Alt+A) checks how well a PDF works with screen readers and other assistive technology.
+**Accessibility check** (Ctrl+Alt+A) checks how well a PDF works with screen readers and other assistive technology. It runs the checks of the PDF/UA standard that a computer can test.
 
 ![Accessibility check results for an agreement, with a fix and the fix tools](images/convert-a11y.png)
 
 1. **Full check** runs it again.
 2. How many rules failed, need review or passed.
-3. The results, grouped: document, page content, forms, alternate text, tables, lists and headings.
+3. The results, grouped: document, page content, structure, forms, alternate text, tables, lists and headings.
 4. What the selected rule means and why it matters, with the pages it affects.
-5. **Fix**: an automatic fix, when there is one.
+5. **Fix**: an automatic fix, when there is one. Each fix is one step you can undo.
 6. **Fix tools**:
    - **Title and language**: give the file a title and a language, so screen readers announce it and pick the right voice.
-   - **Autotag**: build the structure screen readers follow (headings, paragraphs and figures) from the page.
+   - **Autotag**: build the structure screen readers follow from the page (see below).
    - **Alt text**: describe each picture in a sentence or two.
-   - **Reading order**: put the parts of the page in the order they should be read.
+   - **Tags**: opens the **Tags** tab, to check and change the reading order.
+
+What the check looks at, and what **Fix** does when it can:
+
+| Check | Fix |
+|---|---|
+| The file is tagged, and says so | Autotag, or mark it as tagged |
+| A title, also in the file's details that other apps read, shown in the window bar instead of the file name | Title and language, save the title in the file's details, or show the title |
+| The language | Title and language |
+| Every part of each page is either tagged or an artifact (something screen readers skip) | Tag the untagged pages. The rest keeps its tags and your changes |
+| The tags match what's on the page | Repair the tags |
+| Links, form fields and comments are tagged and have a description | Tag them, inside the paragraph a link sits in |
+| The Tab key follows the reading order | Fix the tab order |
+| Fonts are embedded and their text can be read | Embed matching fonts from your computer, for the standard PDF fonts |
+| Tag types are standard ones | Map unusual types to standard ones |
+| Figures and formulas have alt text | Alt text |
+| Tables have header cells that say whether they head a column or a row, and rows and cells are in the right place | Make the first row the headers, and set what each header heads |
+| Lists hold list items | — |
+| Headings start at level 1 and don't skip a level | Renumber the headings |
+
+**Autotag** reads each page the way **PDF to Word** does, column by column in reading order, and tags what it finds: headings (levels 1 to 6, never skipping one), paragraphs (a paragraph that runs onto the next page stays one), lists with their bullets or numbers, tables with header cells, figures, links, form fields and comments. Running headers, footers, page numbers, backgrounds and decoration become artifacts. Autotag never invents alt text: the check lists every figure that still needs a description. If the file already has tags, Autotag replaces them (you can undo it).
+
+**The Tags tab** in the right-hand panel lists the tags in the order screen readers read them:
+
+1. **Show order numbers on the page** draws each tag's number on the page.
+2. The list: number, tag type, page and text. A warning sign marks a figure without alt text. Click a tag to see it on the page.
+3. Drag a tag to move it, or use **Alt+Up** and **Alt+Down**.
+4. **Tag type**: change what a tag is, for example a paragraph that should be a heading.
+5. **Artifact**: screen readers skip it, for decoration or text that repeats on every page. Tags that hold links, fields or comments can't become artifacts.
+6. For a figure, type its **alternate text** and press **Save** (or Enter).
+7. **Artifacts**: text that screen readers skip, such as page headers, footers and page numbers. **Tag as text** makes the selected one readable again, as a paragraph in its place on the page.
+
+Every change in the Tags tab is one step you can undo with **Ctrl+Z**.
+
+**Pages keep their tags.** Deleting, extracting, moving, duplicating, inserting, replacing and resizing pages update the tags too, so the reading order follows the pages and nothing points at a page that is gone. **Combine files** keeps each file's tags and language, tags the contents page it adds, and its report says how many files kept their tags.
+
+**Screen readers and the page view.** While a screen reader such as NVDA or Narrator is running, the page view tells it which page is showing and gives it that page's text in reading order: the tag order when the file is tagged.
 
 A checker can't prove a file is accessible: reading order, alt text and colour contrast need a person to check.
 
@@ -1499,29 +1703,54 @@ A checker can't prove a file is accessible: reading order, alt text and colour c
 
 ## 46. Ask this PDF and Summarize
 
-**Ask this PDF** (Ctrl+Shift+A, or the speech-bubble panel button under the modes) answers questions about the open file in plain words, with the page each answer comes from. It runs on your PC and only uses this PDF.
+**Ask this PDF** (Ctrl+Shift+A, or the speech-bubble panel button under the modes) answers questions about the open file, with the page each answer comes from. It runs on your PC and only uses this PDF.
 
 ![Ask this PDF answering 'How much is the security deposit?' with page citations](images/power-ask.png)
 
 1. The **Ask this PDF** panel button, under the modes.
 2. How many pages were read. Scanned pages without text can't be asked about until you recognize them ([section 35](#35-make-a-scan-searchable)).
 3. Ask about the **Whole document**, **This page**, or chosen **Pages…**.
-4. The answer: the sentences from the PDF that answer your question, each with a page button such as **p. 4**. Click it to jump there; the sentence is highlighted. **Copy with citations** copies the answer with its pages. If the answer isn't in the document, Pagezy says so and shows the closest passages.
+4. The answer, with a page button such as **p. 4**. Click it to jump there; the passage is highlighted. **Copy with citations** copies the answer with its pages. If the answer isn't in the document, Pagezy says so and shows the closest passages.
 5. Type your question and press **Enter**. Before you ask, Pagezy suggests a few questions from the document's headings.
 
-Pagezy doesn't write answers of its own. It picks out the sentences in your PDF that answer the question, so every answer can be checked against its page.
+**Two kinds of answer.** The line under the page count tells you which one you get:
 
-**Summarize** (Ctrl+Shift+M, or **Summarize…** in the Ask panel) picks the most important sentences of the document:
+- **Without an AI model** (how Pagezy starts), Ask picks out the sentences in your PDF that answer the question and quotes them exactly, each with its page. Click **Get an AI model…** to add one.
+- **With an AI model** ([Local AI models](#local-ai-models) below), Ask writes a short answer in plain words from the passages of your PDF that match your question. The words appear as they are written; **Stop** stops it. Every sentence ends with the page it comes from, such as (p. 4), and **Sources** under the answer has a page button for each passage it used. A sentence Pagezy can't match to a passage is marked **(no source found)**. If you stop the answer, or the model can't run, Pagezy shows the quoted sentences instead.
+
+Small models on a PC make more mistakes than big online ones, so check the pages cited before you rely on an answer.
+
+**Summarize** (Ctrl+Shift+M, or **Summarize…** in the Ask panel) sums up the whole document:
 
 ![A five-sentence summary of the annual report, each sentence with its page](images/power-summary.png)
 
 1. **Length**: **Short (5 sentences)**, **Detailed (12 sentences)** or **Key points (8)**.
 2. How many sentences, from how many pages.
-3. The summary. Every sentence is quoted exactly, with its page. Click one to see it on the page.
+3. The summary. Without an AI model, every sentence is quoted exactly, with its page. Click one to see it on the page.
 4. **Copy**.
 5. **Export Markdown…** saves the summary with links to each page.
 
-To turn both features off, untick **AI features** in Settings › **Local AI**.
+With an AI model, the summary is written in plain words instead: one paragraph (**Short**), a few paragraphs (**Detailed**) or a list (**Key points**), with page references such as (p. 3) that you can click. The menu next to **Length** switches between **Written by** the model and **Quoted sentences**. **Stop** stops a summary that is still being written. A long document is summed up from its most important sentences, so it doesn't take too long.
+
+### Local AI models
+
+Settings › **Local AI** › **Manage models…** (also **Local AI models…** in the command palette, or **Get an AI model…** in the Ask panel) lists the AI models Pagezy can use. The screen says which model is in use, if any. Nothing is downloaded until you choose a model.
+
+| Model | Size | Good for |
+|---|---|---|
+| **Qwen3 0.6B** | about 0.5 GB | The smallest and fastest. It often misses or mixes up details. |
+| **Qwen3 1.7B** | about 1.4 GB | Quicker on older PCs. Good for simple questions. |
+| **Qwen3 4B Instruct** | about 2.6 GB | The best answers and summaries. Slower; it needs a recent PC with about 5 GB of free memory. |
+| **BGE small (English search helper)** | about 130 MB | Optional. Helps Ask find the passages that answer a question asked in different words. English documents only. |
+
+- **Best for this PC** marks the model that suits your computer's memory and processor. Each model says whether it fits this PC.
+- Click **Download…**. Pagezy shows the size, where the files come from (Hugging Face), the licence and what is sent: only the download requests, never your documents. Click **Download** to start.
+- The download runs in the background. **Stop** pauses it, and it carries on where it left off next time. Pagezy checks every file before using it, and each download is listed in the network log (Settings › **Privacy & network**).
+- With more than one model, click **Use** on the one Ask and Summarize should use. **In use** shows which one that is. **Delete** removes a model from your PC.
+
+For a PC without internet, download the model's files on another computer from the links Pagezy shows, put them in one folder, copy it over and click **Import model folder…**. Pagezy only imports the models in its list, after checking every file.
+
+To turn AI off completely, untick **AI features** in Settings › **Local AI**. Ask this PDF and Summarize disappear, and no model is loaded.
 
 ## 47. Search in a folder
 
@@ -1643,18 +1872,20 @@ Open **Settings** with the gear button or **Ctrl+,**. Changes apply straight awa
 | **General** | **Keep the original as name.orig.pdf** when you save an edited file · **Reopen the files I had open** · how often a **Recovery copy** is saved · how many **Recent files** to remember |
 | **Appearance** | **Theme** (Light or Dark) · **Text size** of Pagezy itself · **Night pages** · **Sharp text**: smoother text on ordinary screens, and **Darker, crisper letters** for small text that looks thin or grey |
 | **Page display** | The **Default zoom** (**Automatic**, Fit width, Fit page or Actual size) and **Page layout** for files you open for the first time |
-| **Reading** | **Vim-style keys** (j and k to scroll, g and G for the first and last page) · **Ask before opening web links** |
+| **Reading** | **Vim-style keys** (j and k to scroll, g and G for the first and last page) · **Ask before opening web links** · **Protected view** for files downloaded from the internet, for every file, or never |
 | **Accessibility** | **Interface text size** |
 | **Keyboard shortcuts** | Change any shortcut ([section 52](#52-keyboard-shortcuts)) |
 | **Comments** | Your **Author name** |
+| **Editing** | **Check spelling** as you type, the spelling **Language**, and the **Words you added** to your dictionary · **Allow cover & replace when old text can't be removed safely** ([section 15](#15-edit-text-and-pictures)) |
 | **Privacy & network** | **Check for new versions once a day** · the **Network log**: every connection Pagezy has made |
 | **Updates** | **Check for new versions** · **Also offer pre-release versions** · **Check now** |
 | **Files & portable** | Where Pagezy keeps its data · portable mode · **Set Pagezy as the default PDF app…** |
 | **Advanced** | Where the log file is (useful when reporting a problem) |
-| **Editing** | **Allow cover & replace when old text can't be removed safely** ([section 15](#15-edit-text-and-pictures)) |
-| **Forms & signatures** | **Open forms in Fill mode** · **Highlight form fields** · keep XFA data in step · **Check signatures when a document opens** · the Fill & Sign date format · a **Timestamp server** |
-| **Local AI** | **AI features** (Ask this PDF and Summarize) on or off |
+| **Forms & signatures** | **Open forms in Fill mode** · **Highlight form fields** · keep XFA data in step · **Check signatures when a document opens** · the Fill & Sign date format · a **Timestamp server** · **Trust certificates Windows trusts** (Windows) · **Trust lists and certificates…** |
+| **Local AI** | **AI features** (Ask this PDF and Summarize) on or off · which AI model is in use · **Manage models…** ([section 46](#local-ai-models)) |
 | **Presenting & read aloud** | **Advance pages every** · **Loop** · use the timings saved in the file · **Read aloud speed** · **Auto-scroll speed** |
+
+**Spelling.** When you type a comment, a reply, a form field, Fill & sign text or text in Edit mode, Pagezy underlines words it doesn't know with a wavy red line. Right-click an underlined word to pick one of the suggestions, choose **Add to dictionary** (Pagezy remembers the word from then on), or **Ignore** (until you close Pagezy). On Windows, Pagezy uses the spell checker built into Windows, so every language you have added in Windows Settings › Time & language › Language & region can be chosen; English (United States) and English (United Kingdom) are always there. To turn checking off, change the language or remove a word you added, open Settings › **Editing**.
 
 **Make Pagezy your default PDF app.** Click **Set Pagezy as the default PDF app…** (in Settings › Files & portable, or from the command palette). On Windows, click **Open Windows Settings**, click **.pdf** and choose **Pagezy**. Then come back: Pagezy checks that it worked and says "Done. Pagezy opens PDF files." The portable version can't be made the default app.
 
@@ -1680,6 +1911,7 @@ The default shortcuts:
 | Open… | Ctrl+O |
 | Save / Save as… | Ctrl+S / Ctrl+Shift+S |
 | Close tab | Ctrl+W |
+| New window | Ctrl+N |
 | Next / previous tab | Ctrl+Tab / Ctrl+Shift+Tab |
 | Go to tab 3 to 9 | Ctrl+3 … Ctrl+9 |
 | Print… | Ctrl+P |
@@ -1709,6 +1941,7 @@ The default shortcuts:
 | Split view | Ctrl+\\ |
 | Night pages | Ctrl+Shift+N |
 | Read mode | Ctrl+Shift+H |
+| Reflow text | Ctrl+Shift+T |
 | Read aloud | Ctrl+Shift+Y |
 | Full screen | F11 |
 | Present from this page / from the start | F5 / Shift+F5 |
@@ -1770,9 +2003,10 @@ The portable version and the Linux AppImage don't install updates themselves: do
 | **"This PDF is protected"** | Type the password the sender gave you. Without it, nobody can open the file. |
 | **I can't print or copy** | The author restricted the file. Remove security needs the permissions password. |
 | **A form's totals don't add up** | Pagezy does standard form calculations itself; a form that relies on its own custom scripts keeps its saved values. The **Show scripts** button lists such scripts. |
-| **A signature shows "identity unknown"** | The document hasn't changed, but you haven't trusted the signer's certificate yet. Check its fingerprint with the signer, then **Trust this certificate…**. |
-| **Word or Excel files won't open** | Install LibreOffice (free), then try again. |
+| **A signature shows "identity unknown"** | The document hasn't changed, but none of your trust sources vouches for the signer. Check its fingerprint with the signer, then **Trust this certificate…**. If the signer's certificate comes from a public certificate authority, turn on **Trust certificates Windows trusts** in Settings › Forms & signatures, or import that authority's trust list ([section 29](#which-signatures-are-trusted)). |
+| **Word or Excel files won't open** | Install LibreOffice (free), then try again. Microsoft Office works too, if you have it. |
 | **The Tesseract engine is greyed out** | Install Tesseract (free), then restart Pagezy. |
+| **Urdu, Hindi or Russian scans come out as nonsense** | Download the script pack for that language in **Manage language packs…**, then pick it under **Script** in Recognize text. |
 | **My phone can't connect** | The phone must be on the same Wi-Fi as the PC. Allow Pagezy through Windows Firewall on private networks. |
 | **No scanner found** | Check the scanner is on and shows in Windows Settings › Printers & scanners. Meanwhile, use your phone. |
 | **"Windows protected your PC" when installing** | Click **More info**, then **Run anyway**. |
@@ -1781,15 +2015,16 @@ The portable version and the Linux AppImage don't install updates themselves: do
 ## 55. Privacy and where your files are
 
 - **No account, no telemetry, no tracking.** Pagezy sends nothing about you or your files anywhere.
-- **Everything runs on your PC:** opening, editing, OCR, converting, signing, redacting, Ask this PDF and summaries.
-- **The only automatic connection** is the daily update check, which you can turn off. Everything else that touches the internet (a language pack you download, a timestamp server you set) only happens when you ask. **Settings › Privacy & network** lists every connection Pagezy has made.
+- **Protected view:** files you downloaded from the internet open with a bar saying so, and their pages are drawn in a separate process. If a harmful file crashes it, that page just says it couldn't be drawn; Pagezy and your other files carry on. Change this in Settings › **Reading**.
+- **Everything runs on your PC:** opening, editing, OCR, converting, signing, redacting, Ask this PDF and summaries, with or without an AI model.
+- **The only automatic connection** is the daily update check, which you can turn off. Everything else that touches the internet (a language pack or an AI model you download, a timestamp server you set) only happens when you ask. **Settings › Privacy & network** lists every connection Pagezy has made.
 - **PDF scripts are never run**, programs inside PDFs are never opened, and web links ask first.
 - **Your saved signatures and autofill profile** are stored encrypted on your PC.
 
 | What | Where (Windows) |
 |---|---|
 | The app | `C:\Program Files\Pagezy` |
-| Settings, recent files, recovery copies, signatures, digital IDs, pipelines, search indexes | `%LOCALAPPDATA%\Pagezy` |
+| Settings, recent files, workspaces, recovery copies, signatures, digital IDs, pipelines, search indexes | `%LOCALAPPDATA%\Pagezy` |
 | Portable version | the `data` folder beside `Pagezy.exe` |
 | Linux | `~/.local/share/Pagezy` |
 
@@ -1809,10 +2044,15 @@ Uninstalling (Windows Settings › Apps › Pagezy › Uninstall) keeps your set
 | **Bookmark** | An entry in the file's table of contents. |
 | **Page label** | The number a viewer shows for a page, such as "iv", which can differ from its position. |
 | **Bates number** | A unique number stamped on every page of a set of legal documents. |
-| **Digital ID** | A file holding your name and a secret key, used to make certificate signatures. |
+| **Digital ID** | Your name and a secret key (in a file, in Windows or on a USB token), used to make certificate signatures and to open files encrypted for you. |
+| **Long-term validation** | Revocation information stored in a signed file when it is signed, so the signature can still be checked after the certificate expires. |
+| **Trust list** | A list of certificate authorities published by a government or company. Signatures from certificates they issued show as trusted. |
 | **Certificate signature** | A signature that proves who signed and that nothing changed afterwards. |
 | **Fingerprint (SHA-256)** | A short code that identifies a file or certificate exactly. |
 | **PDF/A** | A version of PDF made for keeping documents readable for decades. |
+| **PDF/X** | A version of PDF made for sending to a print shop, with the colours of the printing press built in. |
+| **E-invoice** | An invoice that carries its data in a form accounting software can read. Factur-X and ZUGFeRD put that data inside a PDF. |
+| **Overprint** | Printing one colour on top of another instead of cutting it out first. |
 | **Pipeline** | A list of steps Pagezy runs on many files. |
 | **Regular expression** | A search pattern, such as `\d{5}` for any five digits. |
 
