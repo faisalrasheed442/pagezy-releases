@@ -193,7 +193,7 @@ The full list of tools on Home:
 3. **The search box** opens the command palette (Ctrl+K): type any tool, command, page number or word.
 4. **The mode rail.** Pagezy groups its tools into modes: **Read**, **Comment**, **Edit**, **Organize**, **Forms**, **Sign**, **Protect**, **Scan** (Scan & OCR), **Convert** and **Compare**. All tools are on Home: click the logo, or press **Ctrl+K** and type a tool's name.
 5. **The toolbar** floats above the page and shows the tools of the current mode, with the mode's name at its start. On a small window, tools that don't fit go into a **More** menu at the end.
-6. **Panel buttons**, under the modes, open the side panels: **Pages**, **Bookmarks**, **Search**, **Signatures** and **Ask AI**, plus **Files** (attachments) and **Layers** when a file has them. Drag a panel's right edge to make it wider.
+6. **Panel buttons**, under the modes, open the side panels: **Pages**, **Bookmarks**, **Search**, **Signatures** and **Ask AI**, plus **Files** (attachments) and **Layers** when a file has them. In a short window they show just their icons, so every mode still fits; point at one to see its name. Drag a panel's right edge to make it wider.
 7. **The left panel**, here showing page thumbnails.
 8. **The page area.** Messages about the file (for example "This page is a scan") appear as coloured bars across its top, and short notes such as "Saved" appear for a moment in its bottom-left corner.
 9. **The page bar**, floating under the pages: page number, zoom, page layout and night pages ([section 7](#7-move-around-the-pages)).
