@@ -2015,7 +2015,7 @@ The portable version and the Linux AppImage don't install updates themselves: do
 ## 55. Privacy and where your files are
 
 - **No account, no telemetry, no tracking.** Pagezy sends nothing about you or your files anywhere.
-- **Protected view:** files you downloaded from the internet open with a bar saying so, and their pages are drawn in a separate process. If a harmful file crashes it, that page just says it couldn't be drawn; Pagezy and your other files carry on. Change this in Settings › **Reading**.
+- **Protected view** (Settings › **Reading**, off unless you turn it on): pages of files downloaded from the internet, or of every file, are drawn in a separate process. If a harmful file crashes it, that page just says it couldn't be drawn; Pagezy and your other files carry on. Pages may appear a little more slowly.
 - **Everything runs on your PC:** opening, editing, OCR, converting, signing, redacting, Ask this PDF and summaries, with or without an AI model.
 - **The only automatic connection** is the daily update check, which you can turn off. Everything else that touches the internet (a language pack or an AI model you download, a timestamp server you set) only happens when you ask. **Settings › Privacy & network** lists every connection Pagezy has made.
 - **PDF scripts are never run**, programs inside PDFs are never opened, and web links ask first.
