@@ -193,7 +193,7 @@ The full list of tools on Home:
 3. **The search box** opens the command palette (Ctrl+K): type any tool, command, page number or word.
 4. **The mode rail.** Pagezy groups its tools into modes: **Read**, **Comment**, **Edit**, **Organize**, **Forms**, **Sign**, **Protect**, **Scan** (Scan & OCR), **Convert** and **Compare**. All tools are on Home: click the logo, or press **Ctrl+K** and type a tool's name.
 5. **The toolbar** floats above the page and shows the tools of the current mode, with the mode's name at its start. On a small window, tools that don't fit go into a **More** menu at the end.
-6. **Panel buttons**, under the modes, open the side panels: Pages, Bookmarks, Search, Signatures and Ask this PDF, plus Attachments and Layers when a file has them.
+6. **Panel buttons**, under the modes, open the side panels: **Pages**, **Bookmarks**, **Search**, **Signatures** and **Ask AI**, plus **Files** (attachments) and **Layers** when a file has them. Drag a panel's right edge to make it wider.
 7. **The left panel**, here showing page thumbnails.
 8. **The page area.** Messages about the file (for example "This page is a scan") appear as coloured bars across its top, and short notes such as "Saved" appear for a moment in its bottom-left corner.
 9. **The page bar**, floating under the pages: page number, zoom, page layout and night pages ([section 7](#7-move-around-the-pages)).
@@ -1703,7 +1703,7 @@ A checker can't prove a file is accessible: reading order, alt text and colour c
 
 ## 46. Ask this PDF and Summarize
 
-**Ask this PDF** (Ctrl+Shift+A, or the speech-bubble panel button under the modes) answers questions about the open file, with the page each answer comes from. It runs on your PC and only uses this PDF.
+**Ask this PDF** (Ctrl+Shift+A, or **Ask AI** under the modes) answers questions about the open file, writes from it and changes it on request, with the page each answer comes from. It runs on your PC and only uses this PDF.
 
 ![Ask this PDF answering 'How much is the security deposit?' with page citations](images/power-ask.png)
 
@@ -1719,6 +1719,15 @@ A checker can't prove a file is accessible: reading order, alt text and colour c
 - **With an AI model** ([Local AI models](#local-ai-models) below), Ask writes a short answer in plain words from the passages of your PDF that match your question. The words appear as they are written; **Stop** stops it. Every sentence ends with the page it comes from, such as (p. 4), and **Sources** under the answer has a page button for each passage it used. A sentence Pagezy can't match to a passage is marked **(no source found)**. If you stop the answer, or the model can't run, Pagezy shows the quoted sentences instead.
 
 Small models on a PC make more mistakes than big online ones, so check the pages cited before you rely on an answer.
+
+**More than questions.** Type what you want in the same box:
+
+- **Change the PDF**: "replace Survey with Study", "change name Ali Khan to Ahmed Raza", "remove the word draft". Pagezy finds every match, highlights them on the pages and lists them with their page. Nothing changes until you click **Replace** (or **Remove**); then it's one step that **Ctrl+Z** undoes. This works without an AI model too; with one, Pagezy also understands requests in your own words, such as "swap every Ali for Ahmed".
+- **Have something written from it** (needs an AI model): "write a one-page summary for my manager", "draft an email about these findings", "make an outline of this report", "translate page 1 into Urdu". The text appears as it is written. Then **Copy** it, **Save as Word…**, or **Open as a new PDF**.
+
+**Your AI model.** If you have more than one chat model, choose which one writes in the list under the page count. The **English search helper** you may have downloaded isn't a chat model: it helps Ask find the right passages. The AI runs in a separate process, so Pagezy never freezes while it writes, and if the model fails, only the answer stops.
+
+**A wider panel.** Drag the panel's right edge to make it wider or narrower; Pagezy remembers the width for each panel. Double-click the edge to go back to the standard width.
 
 **Summarize** (Ctrl+Shift+M, or **Summarize…** in the Ask panel) sums up the whole document:
 
