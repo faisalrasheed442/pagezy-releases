@@ -316,7 +316,7 @@ Choose how pages sit on screen:
 
 The menu ends with **Reflow text** ([below](#reflow-text)).
 
-Each file remembers its own zoom and layout. To change what new files open with, see Settings › **Page display** ([section 51](#51-settings)).
+Each file remembers its own zoom and layout. To change what new files open with, see Settings › **Reading** ([section 51](#51-settings)).
 
 ### Reflow text
 
@@ -735,7 +735,7 @@ The look you choose applies to the whole block.
 
 - **Native:** your letters are drawn with the file's own font, so the edit is invisible.
 - **Substitute:** if the file's font lacks a letter you typed, a matching font from your PC draws it.
-- **Cover & replace:** for the rare text that can't be removed safely, Pagezy hides the old text under a box in the paper's colour and draws yours on top. The old text is still in the file; to remove it for good, redact it ([section 32](#32-redact)). You can turn this off in Settings › **Editing**.
+- **Cover & replace:** for the rare text that can't be removed safely, Pagezy hides the old text under a box in the paper's colour and draws yours on top. The old text is still in the file; to remove it for good, redact it ([section 32](#32-redact)). You can turn this off in Settings › **Editing & spelling**.
 
 After you save an edit, the panel says which of the three was used.
 
@@ -1745,7 +1745,7 @@ Settings › **Local AI** › **Manage models…** (also **Local AI models…** 
 
 - **Best for this PC** marks the model that suits your computer's memory and processor. Each model says whether it fits this PC.
 - Click **Download…**. Pagezy shows the size, where the files come from (Hugging Face), the licence and what is sent: only the download requests, never your documents. Click **Download** to start.
-- The download runs in the background. **Stop** pauses it, and it carries on where it left off next time. Pagezy checks every file before using it, and each download is listed in the network log (Settings › **Privacy & network**).
+- The download runs in the background. **Stop** pauses it, and it carries on where it left off next time. Pagezy checks every file before using it, and each download is listed in the network log (Settings › **Privacy & updates**).
 - With more than one model, click **Use** on the one Ask and Summarize should use. **In use** shows which one that is. **Delete** removes a model from your PC.
 
 For a PC without internet, download the model's files on another computer from the links Pagezy shows, put them in one folder, copy it over and click **Import model folder…**. Pagezy only imports the models in its list, after checking every file.
@@ -1860,34 +1860,32 @@ For people who know Python: **Python console (advanced)** (Ctrl+Alt+J) runs Pyth
 
 Open **Settings** with the gear button or **Ctrl+,**. Changes apply straight away.
 
-![Settings, Appearance section: theme, text size, night pages and sharp text](images/app-settings.png)
+![Settings, Appearance page: theme, text size, night pages and sharp text on cards with switches](images/app-settings.png)
 
-1. The sections.
-2. The settings of the chosen section.
-3. **Reset all settings** puts everything back to how it was at the first start. Your files and recent list aren't touched.
-4. **Done**.
+1. **Search settings**: type a word, such as "zoom", and Pagezy shows only the pages and options that mention it.
+2. The pages, in three groups: **Basics**, **Working with PDFs** and **Your PC**.
+3. The options of the chosen page, on cards. Each one says what it does. Switches turn an option on or off; − and + change a number.
+4. **Reset this page** puts the options on this page back to how they were at the first start.
+5. **Done**.
 
-| Section | What you can set |
+| Page | What you can set |
 |---|---|
-| **General** | **Keep the original as name.orig.pdf** when you save an edited file · **Reopen the files I had open** · how often a **Recovery copy** is saved · how many **Recent files** to remember |
-| **Appearance** | **Theme** (Light or Dark) · **Text size** of Pagezy itself · **Night pages** · **Sharp text**: smoother text on ordinary screens, and **Darker, crisper letters** for small text that looks thin or grey |
-| **Page display** | The **Default zoom** (**Automatic**, Fit width, Fit page or Actual size) and **Page layout** for files you open for the first time |
-| **Reading** | **Vim-style keys** (j and k to scroll, g and G for the first and last page) · **Ask before opening web links** · **Protected view** for files downloaded from the internet, for every file, or never |
-| **Accessibility** | **Interface text size** |
-| **Keyboard shortcuts** | Change any shortcut ([section 52](#52-keyboard-shortcuts)) |
-| **Comments** | Your **Author name** |
-| **Editing** | **Check spelling** as you type, the spelling **Language**, and the **Words you added** to your dictionary · **Allow cover & replace when old text can't be removed safely** ([section 15](#15-edit-text-and-pictures)) |
-| **Privacy & network** | **Check for new versions once a day** · the **Network log**: every connection Pagezy has made |
-| **Updates** | **Check for new versions** · **Also offer pre-release versions** · **Check now** |
-| **Files & portable** | Where Pagezy keeps its data · portable mode · **Set Pagezy as the default PDF app…** |
-| **Advanced** | Where the log file is (useful when reporting a problem) |
-| **Forms & signatures** | **Open forms in Fill mode** · **Highlight form fields** · keep XFA data in step · **Check signatures when a document opens** · the Fill & Sign date format · a **Timestamp server** · **Trust certificates Windows trusts** (Windows) · **Trust lists and certificates…** |
+| **General** | **Reopen the files I had open** · **Keep the original as name.orig.pdf** when you save an edited file · how often a **recovery copy** is saved · how many **Recent files** to remember |
+| **Appearance** | **Theme** (Light or Dark) · **Text size** of Pagezy itself · **Night pages** · **Smooth text for LCD screens** · **Darker, crisper letters** for small text that looks thin or grey |
+| **Reading** | The **Zoom** (**Automatic**, Fit width, Fit page or Actual size) and **Page layout** that files open with the first time · **Vim-style keys** (j and k to scroll, g and G for the first and last page) · **Ask before opening web links** · **Protected view** (off, files from the internet, or every file) |
+| **Editing & spelling** | **Underline misspelled words as I type**, the spelling **Language**, and the **Words you added** to your dictionary · **Allow cover & replace** ([section 15](#15-edit-text-and-pictures)) |
+| **Comments** | Your **Author name** · the **Highlight colour** the Highlight tool starts with |
+| **Forms & signatures** | **Open forms in Fill mode** · **Highlight form fields** · keep XFA data in step · the Fill & sign date format · **Check signatures when a file opens** · a **Timestamp server** · **Trust certificates Windows trusts** (Windows) · **Trust lists and certificates** |
+| **Scan & OCR** | The recognition **Engine** · **Languages** · **Straighten and turn pages upright first** · **Clean the background first** · **Flag words below** a confidence you choose |
 | **Local AI** | **AI features** (Ask this PDF and Summarize) on or off · which AI model is in use · **Manage models…** ([section 46](#local-ai-models)) |
-| **Presenting & read aloud** | **Advance pages every** · **Loop** · use the timings saved in the file · **Read aloud speed** · **Auto-scroll speed** |
+| **Presenting & read aloud** | **Advance pages every** · **Start again after the last page** · use the timings saved in the file · **Read aloud speed** · **Auto-scroll speed** |
+| **Privacy & updates** | **Check for a new version once a day** · **Include test versions** · **Check now** · the **Network log**: every connection Pagezy has made |
+| **Keyboard shortcuts** | Change any shortcut ([section 52](#52-keyboard-shortcuts)) |
+| **Files & advanced** | Where Pagezy keeps its data · portable mode · **Set as default…** PDF app · where the log file is (useful when reporting a problem) · **Reset all settings** (your files, recent list and signatures are kept) |
 
-**Spelling.** When you type a comment, a reply, a form field, Fill & sign text or text in Edit mode, Pagezy underlines words it doesn't know with a wavy red line. Right-click an underlined word to pick one of the suggestions, choose **Add to dictionary** (Pagezy remembers the word from then on), or **Ignore** (until you close Pagezy). On Windows, Pagezy uses the spell checker built into Windows, so every language you have added in Windows Settings › Time & language › Language & region can be chosen; English (United States) and English (United Kingdom) are always there. To turn checking off, change the language or remove a word you added, open Settings › **Editing**.
+**Spelling.** When you type a comment, a reply, a form field, Fill & sign text or text in Edit mode, Pagezy underlines words it doesn't know with a wavy red line. Right-click an underlined word to pick one of the suggestions, choose **Add to dictionary** (Pagezy remembers the word from then on), or **Ignore** (until you close Pagezy). On Windows, Pagezy uses the spell checker built into Windows, so every language you have added in Windows Settings › Time & language › Language & region can be chosen; English (United States) and English (United Kingdom) are always there. To turn checking off, change the language or remove a word you added, open Settings › **Editing & spelling**.
 
-**Make Pagezy your default PDF app.** Click **Set Pagezy as the default PDF app…** (in Settings › Files & portable, or from the command palette). On Windows, click **Open Windows Settings**, click **.pdf** and choose **Pagezy**. Then come back: Pagezy checks that it worked and says "Done. Pagezy opens PDF files." The portable version can't be made the default app.
+**Make Pagezy your default PDF app.** Click **Set as default…** in Settings › **Files & advanced** (or **Set Pagezy as the default PDF app…** in the command palette). On Windows, click **Open Windows Settings**, click **.pdf** and choose **Pagezy**. Then come back: Pagezy checks that it worked and says "Done. Pagezy opens PDF files." The portable version can't be made the default app.
 
 ## 52. Keyboard shortcuts
 
@@ -1969,7 +1967,7 @@ Comment, Sign, Scan & OCR and the Organize page grid also have single-letter key
 
 ## 53. Updates
 
-Once a day, Pagezy checks whether a new version is out. That is its only automatic connection, and you can turn it off in Settings › **Updates**. Nothing is shown unless there's a new version. When there is:
+Once a day, Pagezy checks whether a new version is out. That is its only automatic connection, and you can turn it off in Settings › **Privacy & updates**. Nothing is shown unless there's a new version. When there is:
 
 ![The top bar showing an update ready next to the background tasks button](images/app-update-notice.png)
 
