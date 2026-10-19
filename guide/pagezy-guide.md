@@ -1730,6 +1730,8 @@ Small models on a PC make more mistakes than big online ones, so check the pages
 
 **Your AI model.** If you have more than one chat model, choose which one writes in the list under the page count. The **English search helper** you may have downloaded isn't a chat model: it helps Ask find the right passages. The AI model and the search helper each run in a separate process, so Pagezy never freezes while they work, and if one fails, only the answer stops (without the search helper, Ask finds passages by their words).
 
+**How long it takes.** Before it writes, the model reads the PDF text it was given; Ask shows about how long that takes ("Reading the PDF… about 30 s") and the first words follow. Answers come as tidy text with headings, lists and tables, and every page number in them is a link to that page. A smaller model, such as Qwen3 1.7B, answers two to three times faster; a larger one writes better.
+
 **A wider panel.** Drag the panel's right edge to make it wider or narrower; Pagezy remembers the width for each panel. Double-click the edge to go back to the standard width.
 
 **Summarize** (Ctrl+Shift+M, or **Summarize…** in the Ask panel) sums up the whole document:
